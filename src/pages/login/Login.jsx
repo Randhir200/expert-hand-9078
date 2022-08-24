@@ -1,8 +1,44 @@
 import React from 'react'
-import { Box, Button, color, Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
+import { Alert, AlertIcon, AlertTitle, Box, Button,Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
+import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
+
+import { getdata } from './Reducer/action'
+import { useEffect } from 'react'
 const Login = () => {
+  
+  const dispatch = useDispatch()
+  const {data} = useSelector((state)=>state.login)
+  const [mail,setmail] = useState("")
+  const [pass,setpass] = useState("")
+  const [correct,setcorrect] = useState(true)
+
+   const handlechange =()=>{
+     console.log(data, mail, pass)
+    let flag =  data.find((el)=>(
+       el.email == mail && el.password==pass
+    ))
+     if(flag){
+      setcorrect(true)
+      //navigate
+     }
+     else{
+      setcorrect(false)
+     }   
+   }
+   useEffect(()=>{
+       dispatch(getdata())
+   },[])
+
+
   return (
+  
     <Box>
+        {!correct?<Alert status='error'>
+    <AlertIcon />
+    <AlertTitle>Your browser is outdated!</AlertTitle>
+   
+  </Alert>:<div>hello</div>}
         <Flex >
          <Box bg={"RGBA(0, 0, 0, 0.92)"} >
         <Image src='https://pro.trackingtime.co/img/login/1.svg' alt='Dan Abramov'  boxSize='650px' h="650px" />
@@ -34,14 +70,14 @@ const Login = () => {
             <Text p="5px" fontSize="14px" fontWeight="500">Sign in with your email</Text>
             <Box >
               <FormControl marginBottom={"15px"}>
-                <Input placeholder='Email'/>
+                <Input placeholder='Email'  onChange={(e)=>setmail(e.target.value)}/>
                 
               </FormControl>
               <FormControl marginBottom={"15px"}>
-              <Input placeholder='Password' />
+              <Input placeholder='Password' onChange={(e)=>setpass(e.target.value)} />
               </FormControl>
             </Box>
-            <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} >Login</Button>
+            <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handlechange}>Login</Button>
           </Flex>
           <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Do you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} >Sign Up</span></Text>
           <Text fontSize={"15px"} fontWeight="400" marginTop={"40px"} textDecoration="underLine">Terms of service / Privacy Policy</Text>

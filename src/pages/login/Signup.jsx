@@ -2,7 +2,29 @@ import React from 'react'
 import { Box, Button, color, Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
 
 import { Checkbox} from '@chakra-ui/react'
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { postApi } from './Reducer/action'
 const Signup = () => {
+  const [email,setemail] = useState("")
+  const [password,setpassword] = useState("")
+
+   const dispatch = useDispatch()
+ 
+   
+    
+   const handleAdd=()=>{ 
+         const datas ={
+           email:email,
+           password:password
+         }
+         dispatch(postApi(datas))
+        
+   }
+   
+
+
+
   return (
     <Box>
         <Flex >
@@ -36,18 +58,19 @@ const Signup = () => {
             <Text p="5px" fontSize="14px" fontWeight="500">Sign in with your email</Text>
             <Box >
               <FormControl marginBottom={"15px"}>
-                <Input placeholder='Email'/>
+                <Input placeholder='Email' onChange={(e)=>setemail(e.target.value)}/>
                 
               </FormControl>
               <FormControl marginBottom={"15px"}>
-              <Input placeholder='Password' />
+              <Input placeholder='Password' onChange={(e)=>setpassword(e.target.value)}/>
               </FormControl>
-               <Text>I agree with the Terms of service & Privacy Policy
-</Text>
+               
+            </Box>
+            <Box>
+            <Text>I agree with the Terms of service & Privacy Policy</Text>
               <Checkbox ></Checkbox>
             </Box>
-           
-            <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} >Sign Up</Button>
+            <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handleAdd}>Sign Up</Button>
           </Flex>
           <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Do you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} >Sign Up</span></Text>
           <Text fontSize={"15px"} fontWeight="400" marginTop={"40px"} textDecoration="underLine">Terms of service / Privacy Policy</Text>
