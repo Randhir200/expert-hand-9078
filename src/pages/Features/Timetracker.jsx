@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CSS from "../Features/Timetracker.module.css"
-import { Button, createIcon,Stack, HStack, Input, FormControl,Container, Box, Image,Text, VStack, Heading, border, textDecoration, Spacer} from "@chakra-ui/react";
+import { Button, createIcon,Stack, HStack, Input, FormControl,Container, Box, Image,Text, VStack, Heading, border, textDecoration, Spacer, color} from "@chakra-ui/react";
 import { extendTheme } from '@chakra-ui/react'
 
 const img = [
@@ -144,7 +144,8 @@ const styles ={
         // backgroundColor:"white",
         width:"100%",
         height:"60px",
-        marginBottom:"10px"
+        marginBottom:"10px",
+        justifyContent:"flex-start"
      },
      
      lastHeading:{
@@ -185,11 +186,29 @@ const styles ={
 const Timetracker = () => {
     
     const [id,setId] = useState(0);
-    const [status, setStatus] = useState(false)
+    const [status1, setStatus1] = useState(false)
+    const [status2, setStatus2] = useState(false)
+    const [status3, setStatus3] = useState(false)
 
-    const handleClick =()=>{
-        setStatus(!status)
+    const handleClick1 =()=>{
+        setStatus1(true)
+        setStatus2(false)
+        setStatus3(false)
+        setId(0)
     }
+    const handleClick2 =()=>{
+       setStatus1(false)
+        setStatus2(true)
+        setStatus3(false)
+        setId(1)
+    }
+    const handleClick3 =()=>{
+       setStatus1(false)
+        setStatus2(false)
+        setStatus3(true)
+        setId(2)
+    }
+
     
   return (
     <Box>
@@ -248,13 +267,13 @@ const Timetracker = () => {
                 <Text>
                     
                     <Stack direction={{base:"column",lg:"row"}} w="85%"  margin="auto" mt="20px" >
-                        <VStack w="50%" border="1px solid red">
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick} bg={status? "black":"white"} _hover={{bg:"none"}}>hi</Button>
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick} bg={status? "black":"white"}>helo</Button>
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick} bg={status? "black":"white"}>git</Button>
+                        <VStack w={{base:"100%",lg:"50%"}} >
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick1} bg={status1? "black":"white"} color={status1? "white":"black"}  >Easy clock in and clock Out</Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick2} bg={status2? "black":"white"} color={status2? "white":"black"}  >Add and edit time entries for your whole team</Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick3} bg={status3? "black":"white"} color={status3? "white":"black"} >Create proffesional time sheets and reports </Button>
                         </VStack>
-                        <Stack w="50%" border="1px solid red">
-
+                        <Stack w={{base:"100%",lg:"50%"}} >
+                           <Image src={btnimg[id]} />
                         </Stack>
                     </Stack>
 
