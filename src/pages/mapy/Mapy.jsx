@@ -1,6 +1,6 @@
 import React from 'react';
-import trackingCSS from './tracking.module.css';
-export default function Tracking() {
+import trackingCSS from './mapy.module.css';
+export default function Mapy() {
   return (
     <div className={trackingCSS.tracking_body}>
       <div className={`${trackingCSS.sidebar}`}>
