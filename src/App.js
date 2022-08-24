@@ -3,11 +3,10 @@ import Tracking from './pages/Features/disco';
 import Timetracker from './pages/Features/Timetracker';
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Timetracker />
-      {/* <Tracking /> */}
+      <Tracking />
     </div>
   );
 }
-
 export default App;
