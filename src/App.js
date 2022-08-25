@@ -1,8 +1,10 @@
 import './App.css';
+import Integrations from './pages/Integrations/Integrations';
+
 function App() {
   return (
     <div className="App">
-      <p>hello</p>
+      <Integrations />
     </div>
   );
 }
