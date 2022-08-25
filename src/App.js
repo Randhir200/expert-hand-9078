@@ -1,16 +1,12 @@
 import './App.css';
-import Login from './pages/login/Login';
-import Signup from './pages/login/Signup';
-
+import AllRoutes from './components/AllRoutes';
+import Navbar from './pages/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-
-
-      <Login/>
-      <Signup />
-    </div>
-  );
+      <Navbar />
+      <AllRoutes />
+    </div> 
+ )
 }
-
 export default App;

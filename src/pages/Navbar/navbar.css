@@ -1,0 +1,122 @@
+.navbar__container{
+    position: sticky;
+    width: 80%;
+    display: flex;
+    /* border: 1px solid  black; */
+    padding: 0.875rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 0.875rem;
+    margin-bottom: 0.875rem;
+}
+
+.navbar__logo > img{
+    width: 11.875rem;
+
+}
+
+.navbar__buttons{
+    display: flex;
+    gap: 2rem;
+}
+.navbar__tryit{
+    background-color: #F6F8F9;
+    border-color: #00AD95;
+    border-radius: 0.5rem;
+    border: 2px solid;
+    width:8.75rem;
+    height: 2rem;
+    border-width:0.12rem;
+    margin: auto;
+    color: #00AD95;
+    font-weight: bolder;
+}
+#Login__button{
+    background-color:#00AD95;
+    color: white;
+}
+#Login__button:hover{
+    background-color:#F6F8F9;
+     color: #00AD95;
+     cursor: pointer;
+     
+
+}
+.navbar__tryit:hover{
+    background-color: #00AD95;
+    color:#F6F8F9 ;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.navbar__links{
+    color: black;
+    text-decoration: none;
+    margin: auto;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .4s;
+    letter-spacing: 1.68px;
+}
+.navbar__links:hover{
+    color: #00AD95;
+}
+
+
+.feature__container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.downIconUp{
+    transform: rotate(180deg);
+    transition: .3s;
+}
+.downIconDown{
+    transform: rotate(0deg);
+    transition: .3s;
+}
+
+.feature__menu{
+    width:250px;
+    /* height: 500px; */
+    /* border: 1px solid;  */
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: absolute;
+    /* padding: 1rem; */
+    left: 0;
+    top: 2.5rem;
+    background: white;
+    transition: 1s;
+    border-radius: 0.3rem;
+    z-index: 2;
+}
+.feature__menu-close{
+    display: none;
+    transition: 1s;
+}
+.feature__menu-open{
+    z-index: 1;
+
+}
+
+.feature__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    list-style: none;
+    /* border: 1px solid; */
+    text-align: left;
+    padding: 1rem;
+
+}
+
+.Fitem{
+    font-weight: 700;
+}
