@@ -8,6 +8,5 @@ function App() {
       <AllRoutes />
     </div> 
  )
-
 }
 export default App;
