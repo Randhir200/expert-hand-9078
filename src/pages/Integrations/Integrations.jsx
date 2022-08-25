@@ -1,6 +1,6 @@
 import React from 'react'
-import AppGrid from '../../components/Integrations/AppGrid'
-import SearchPanel from '../../components/Integrations/SearchPanel'
+import AppGrid from './AppGrid'
+import SearchPanel from './SearchPanel'
 
 const Integrations = () => {
   return (
