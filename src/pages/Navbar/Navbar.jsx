@@ -11,7 +11,12 @@ const Navbar = () => {
     const homepath = () => {
         navigate('/')
     }
-  
+    
+    const handlelogin =()=>{
+        navigate("/login")
+    }
+
+
     return (
     <div className='navbar__container'>
           <div className='navbar__logo' onClick={homepath}>
@@ -58,7 +63,7 @@ const Navbar = () => {
                     </div>
                 </div>  
               <button className='navbar__tryit '>TRY IT FOR FREE</button>
-              <button className='navbar__tryit navbar__links' id='Login__button'>Login</button>
+              <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}>Login</button>
           </div>
     </div>
   )
