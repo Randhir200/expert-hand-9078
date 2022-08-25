@@ -3,7 +3,6 @@ import trackingCSS from './mapy.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import LocationMarker from './LocationMarker';
 import MapComponent from './MapComponent';
-import DraggableMarker from './DraggableMarker';
 export default function Mapy() {
   return (
     <div className={trackingCSS.tracking_body}>
@@ -11,7 +10,7 @@ export default function Mapy() {
         <img src='logo.png' alt='Logo' className='logo' />
 
         <ul className={trackingCSS.workouts}>
-          <form className={`${trackingCSS.form} ${trackingCSS.hidden}`}>
+          <form className={`${trackingCSS.form}`}>
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Type</label>
               <select
@@ -21,8 +20,8 @@ export default function Mapy() {
                 <option value='cycling'>Cycling</option>
               </select>
             </div>
-            <div className='form__row'>
-              <label className='form__label'>Distance</label>
+            <div className={trackingCSS.form__row}>
+              <label className={trackingCSS.form__label}>Distance</label>
               <input
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
                 placeholder='km'
@@ -31,8 +30,8 @@ export default function Mapy() {
             <div className={`${trackingCSS.form__row}`}>
               <label className={trackingCSS.form__label}>Duration</label>
               <input
-                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
                 placeholder='min'
+                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
               />
             </div>
             <div className={trackingCSS.form__row}>
@@ -42,15 +41,7 @@ export default function Mapy() {
                 placeholder='step/min'
               />
             </div>
-            <div
-              className={`${trackingCSS.form__row} ${trackingCSS.form__row}`}
-            >
-              <label className={trackingCSS.form__label}>Elev Gain</label>
-              <input
-                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
-                placeholder='meters'
-              />
-            </div>
+
             <button className={trackingCSS.form__btn}>OK</button>
           </form>
         </ul>
@@ -66,7 +57,7 @@ export default function Mapy() {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         <LocationMarker />
-        <MapComponent />
+        {/* <MapComponent /> */}
         {/* <DraggableMarker /> */}
       </MapContainer>
     </div>
