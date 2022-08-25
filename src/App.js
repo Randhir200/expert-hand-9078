@@ -1,13 +1,12 @@
 import './App.css';
-// import Tracking from './pages/Features/disco';
-import Timetracker from './pages/Features/Timetracker';
-import Mapy from './pages/mapy/Mapy';
+import AllRoutes from './components/AllRoutes';
+import Navbar from './pages/Navbar/Navbar';
 function App() {
   return (
-    <div className='App'>
-      {/* <Timetracker /> */}
-      <Mapy />
-    </div>
-  );
+    <div className="App">
+      <Navbar />
+      <AllRoutes />
+    </div> 
+ )
 }
 export default App;
