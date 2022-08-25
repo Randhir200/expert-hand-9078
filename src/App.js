@@ -5,9 +5,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <AllRoutes/>
-    </div>
-  );
+      <AllRoutes />
+    </div> 
+ )
 }
-
 export default App;
