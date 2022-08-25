@@ -1,12 +1,13 @@
 import './App.css';
-import Integrations from './pages/Integrations/Integrations';
-
+import AllRoutes from './components/AllRoutes';
+import Navbar from './pages/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <Integrations />
-    </div>
-  );
-}
+      <Navbar />
+      <AllRoutes />
+    </div> 
+ )
 
+}
 export default App;
