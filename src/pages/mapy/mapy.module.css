@@ -194,14 +194,14 @@ a:visited {
 }
 
 /* Popup width is defined in JS using options */
-.leaflet-popup .leaflet-popup-content-wrapper {
+.leaflet_popup .leaflet_popup_content_wrapper {
   background-color: var(--color-dark--1);
   color: var(--color-light--2);
   border-radius: 5px;
   padding-right: 0.6rem;
 }
 
-.leaflet-popup .leaflet-popup-content {
+.leaflet_popup .leaflet_popup_content {
   font-size: 1.5rem;
 }
 
