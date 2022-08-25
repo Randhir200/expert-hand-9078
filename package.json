@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@chakra-ui/react": "^2.2.8",
     "@emotion/react": "^11.10.0",
@@ -15,13 +14,10 @@
     "axios": "^0.27.2",
     "chakra": "^0.0.3",
     "framer-motion": "^7.2.1",
-    "leaflet": "^1.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "framer-motion": "^7.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",

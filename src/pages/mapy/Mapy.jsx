@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import trackingCSS from './mapy.module.css';
-import { MapContainer, TileLayer, Marker, Popup, Map,useMapEvents } from 'react-leaflet';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMapEvents,
+} from 'react-leaflet';
 export default function Mapy() {
-  const [position, setPosition] = useState(null)
+  const [position, setPosition] = useState(null);
   const map = useMapEvents({
     click() {
-      map.locate()
+      map.locate();
     },
     locationfound(e) {
-      setPosition(e.latlng)
-      map.flyTo(e.latlng, map.getZoom())
+      setPosition(e.latlng);
+      map.flyTo(e.latlng, map.getZoom());
     },
-  })
-
+  });
 
   return (
     <div className={trackingCSS.tracking_body}>
@@ -112,21 +117,21 @@ export default function Mapy() {
         </li> --> */}
         </ul>
       </div>
-   {   position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  )}
-       <MapContainer
-    center={{ lat: 51.505, lng: -0.09 }}
-    zoom={13}
-    scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <LocationMarker />
-  </MapContainer>
+      {position === null ? null : (
+        <Marker position={position}>
+          <Popup>You are here</Popup>
+        </Marker>
+      )}
+      <MapContainer
+        center={{ lat: 51.505, lng: -0.09 }}
+        zoom={13}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        />
+      </MapContainer>
     </div>
   );
 }
