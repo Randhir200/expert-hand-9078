@@ -12,11 +12,15 @@ export default function LocationMarker({
   inpCad,
   inpTyp,
   inpElv,
+  handleActive,
 }) {
   const [position, setPosition] = useState(null);
   const [bbox, setBbox] = useState([]);
   const map = useMap();
   let mapEvent;
+  inpTyp.current.addEventListener('change', () => {
+    handleActive();
+  });
   useEffect(() => {
     map.locate().on('locationfound', function (e) {
       setPosition(e.latlng);
@@ -43,8 +47,6 @@ export default function LocationMarker({
       //Display marker
       formEl.current.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log('hello');
-
         let { lat, lng } = mapEvent.latlng;
         let coords = [lat, lng];
         setPosition([...coords]);
@@ -65,18 +67,6 @@ export default function LocationMarker({
           .openPopup();
       });
     }
-
-    inpTyp.current.addEventListener('change', () => {
-      // inpElv.current
-      //   .closest(trackingCSS.from__row)
-      //   .classList()
-      //   .toggle(trackingCSS.form__row_hidden);
-      // inpCad.current
-      //   .closest(trackingCSS.from__row)
-      //   .classList()
-      //   .toggle(trackingCSS.form__row_hidden);
-      console.log(inpCad.cuurent)
-    });
   }, [map]);
 
   return position === null ? null : (

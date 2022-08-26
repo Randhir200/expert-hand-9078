@@ -3,12 +3,17 @@ import trackingCSS from './mapy.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import LocationMarker from './LocationMarker';
 export default function Mapy() {
+  const [isActive, setIsActive] = useState(false);
   const formElement = useRef(null);
   const inputDistance = useRef(null);
   const inputDuration = useRef(null);
   const inputCadence = useRef(null);
   const inputType = useRef(null);
   const inputElevation = useRef(null);
+  console.log(isActive);
+  function handleActive() {
+    setIsActive(!isActive);
+  }
   return (
     <div className={trackingCSS.tracking_body}>
       <div className={`${trackingCSS.sidebar}`}>
@@ -27,7 +32,8 @@ export default function Mapy() {
           >
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Type</label>
-              <select ref={inputType}
+              <select
+                ref={inputType}
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input} 'form__input--type'`}
               >
                 <option value='running'>Running</option>
@@ -50,7 +56,11 @@ export default function Mapy() {
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
               />
             </div>
-            <div className={trackingCSS.form__row}>
+            <div
+              className={`${trackingCSS.form__row} ${
+                isActive ? trackingCSS.form__row_hidden : ''
+              }`}
+            >
               <label className={trackingCSS.form__label}>Cadence</label>
 
               <input
@@ -58,10 +68,13 @@ export default function Mapy() {
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
                 placeholder='step/min'
               />
-
             </div>
 
-            <div className={`${trackingCSS.form__row} ${trackingCSS.form__row_hidden}`}>
+            <div
+              className={`${trackingCSS.form__row} ${
+                !isActive ? trackingCSS.form__row_hidden : ''
+              }`}
+            >
               <label className={trackingCSS.form__label}>Elev Gain</label>
               <input
                 ref={inputElevation}
@@ -70,7 +83,7 @@ export default function Mapy() {
               />
             </div>
 
-            {/* <button className={trackingCSS.form__btn}>OK</button> */}
+            <button className={trackingCSS.form__btn}>OK</button>
           </form>
         </ul>
       </div>
@@ -84,9 +97,15 @@ export default function Mapy() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <LocationMarker formEl={formElement} inpDis={inputDistance} inpDu={inputDuration} inpCad={inputCadence} inpElv={inputElevation} inpTyp={inputType} />
-        {/* <MapComponent /> */}
-        {/* <DraggableMarker /> */}
+        <LocationMarker
+          formEl={formElement}
+          inpDis={inputDistance}
+          inpDu={inputDuration}
+          inpCad={inputCadence}
+          inpElv={inputElevation}
+          inpTyp={inputType}
+          handleActive={handleActive}
+        />
       </MapContainer>
     </div>
   );
