@@ -1,16 +1,18 @@
-import React from 'react'
-import { Box, Button, color, Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
+import React, { useEffect } from 'react'
+import { Alert, AlertIcon, AlertTitle, Box, Button, color, Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
 
 import { Checkbox} from '@chakra-ui/react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { postApi } from './Reducer/action'
+import { getdata, postApi } from './Reducer/action'
+import { Navigate, useNavigate } from 'react-router-dom'
 const Signup = () => {
   const [email,setemail] = useState("")
   const [password,setpassword] = useState("")
-
+  const {data} = useSelector((state)=>state.login)
+  const [correct,setcorrect] = useState(false)
    const dispatch = useDispatch()
- 
+   const navigate = useNavigate()
    
     
    const handleAdd=()=>{ 
@@ -18,15 +20,41 @@ const Signup = () => {
            email:email,
            password:password
          }
-         dispatch(postApi(datas))
+        let flag =  data.find((el)=>(
+          el.email === email 
+       ))
+       if(flag){
+        setcorrect(true)
+        //navigate
+       } 
+       else{
+        dispatch(postApi(datas))
+        alert("user is created")
+        navigate("/login")
+       }
         
    }
+    const handlelog =()=>{
+      navigate("/login")
+    }
+    useEffect(()=>{
+        dispatch(getdata())
+    },[])
    
 
 
 
+
+
+
+   
+
   return (
     <Box>
+      {correct&&<Alert status='error'>
+    <AlertIcon />
+    <AlertTitle>User already exist</AlertTitle>
+  </Alert>}
         <Flex >
          <Box bg={"RGBA(0, 0, 0, 0.92)"} >
         <Image src='https://pro.trackingtime.co/img/login/1.svg' alt='Dan Abramov'  boxSize='650px' h="650px" />
@@ -72,7 +100,7 @@ const Signup = () => {
             </Box>
             <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handleAdd}>Sign Up</Button>
           </Flex>
-          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Do you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} >Sign Up</span></Text>
+          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Already have account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} onClick={handlelog}>Login</span></Text>
           <Text fontSize={"15px"} fontWeight="400" marginTop={"40px"} textDecoration="underLine">Terms of service / Privacy Policy</Text>
           </Box>
         </Flex>
