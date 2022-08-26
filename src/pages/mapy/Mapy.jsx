@@ -7,6 +7,8 @@ export default function Mapy() {
   const inputDistance = useRef(null);
   const inputDuration = useRef(null);
   const inputCadence = useRef(null);
+  const inputType = useRef(null);
+  const inputElevation = useRef(null);
   return (
     <div className={trackingCSS.tracking_body}>
       <div className={`${trackingCSS.sidebar}`}>
@@ -25,8 +27,8 @@ export default function Mapy() {
           >
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Type</label>
-              <select
-                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
+              <select ref={inputType}
+                className={`${trackingCSS.form__input} ${trackingCSS.form__input} 'form__input--type'`}
               >
                 <option value='running'>Running</option>
                 <option value='cycling'>Cycling</option>
@@ -50,14 +52,25 @@ export default function Mapy() {
             </div>
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Cadence</label>
+
               <input
                 ref={inputCadence}
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
                 placeholder='step/min'
               />
+
             </div>
 
-            <button className={trackingCSS.form__btn}>OK</button>
+            <div className={`${trackingCSS.form__row} ${trackingCSS.form__row_hidden}`}>
+              <label className={trackingCSS.form__label}>Elev Gain</label>
+              <input
+                ref={inputElevation}
+                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
+                placeholder='meters'
+              />
+            </div>
+
+            {/* <button className={trackingCSS.form__btn}>OK</button> */}
           </form>
         </ul>
       </div>
@@ -71,7 +84,7 @@ export default function Mapy() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <LocationMarker formEl={formElement} inpDis={inputDistance} inpDu={inputDuration} inpCad={inputCadence} />
+        <LocationMarker formEl={formElement} inpDis={inputDistance} inpDu={inputDuration} inpCad={inputCadence} inpElv={inputElevation} inpTyp={inputType} />
         {/* <MapComponent /> */}
         {/* <DraggableMarker /> */}
       </MapContainer>

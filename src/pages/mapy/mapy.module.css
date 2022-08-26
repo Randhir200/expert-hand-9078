@@ -138,7 +138,7 @@ a:visited {
   align-items: center;
 }
 
-.form__row--hidden {
+.form__row_hidden {
   display: none;
 }
 

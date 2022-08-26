@@ -5,7 +5,14 @@ import './mapy.css';
 import trackingCSS from './mapy.module.css';
 import L from 'leaflet';
 
-export default function LocationMarker({ formEl, inpDis, inpDu, inpCad }) {
+export default function LocationMarker({
+  formEl,
+  inpDis,
+  inpDu,
+  inpCad,
+  inpTyp,
+  inpElv,
+}) {
   const [position, setPosition] = useState(null);
   const [bbox, setBbox] = useState([]);
   const map = useMap();
@@ -32,7 +39,7 @@ export default function LocationMarker({ formEl, inpDis, inpDu, inpCad }) {
       inpDis.current.focus();
 
       //Clear input fields
-       inpDis.current.value = inpDu.current.value = inpCad.current.value = ''; 
+      inpDis.current.value = inpDu.current.value = inpCad.current.value = '';
       //Display marker
       formEl.current.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -58,6 +65,18 @@ export default function LocationMarker({ formEl, inpDis, inpDu, inpCad }) {
           .openPopup();
       });
     }
+
+    inpTyp.current.addEventListener('change', () => {
+      // inpElv.current
+      //   .closest(trackingCSS.from__row)
+      //   .classList()
+      //   .toggle(trackingCSS.form__row_hidden);
+      // inpCad.current
+      //   .closest(trackingCSS.from__row)
+      //   .classList()
+      //   .toggle(trackingCSS.form__row_hidden);
+      console.log(inpCad.cuurent)
+    });
   }, [map]);
 
   return position === null ? null : (
