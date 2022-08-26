@@ -7,6 +7,6 @@ function App() {
       <Navbar />
       <AllRoutes />
     </div> 
- )
+  );
 }
 export default App;

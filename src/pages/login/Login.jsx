@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 import { getdata } from './Reducer/action'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
   
   const dispatch = useDispatch()
@@ -12,8 +13,9 @@ const Login = () => {
   const [mail,setmail] = useState("")
   const [pass,setpass] = useState("")
   const [correct,setcorrect] = useState(true)
-
-   const handlechange =()=>{
+  const navigate = useNavigate()
+  
+  const handlechange =()=>{
      console.log(data, mail, pass)
     let flag =  data.find((el)=>(
        el.email == mail && el.password==pass
@@ -21,6 +23,7 @@ const Login = () => {
      if(flag){
       setcorrect(true)
       //navigate
+      navigate("/")
      }
      else{
       setcorrect(false)
@@ -29,16 +32,18 @@ const Login = () => {
    useEffect(()=>{
        dispatch(getdata())
    },[])
-
+   const handlesignup =()=>{
+    navigate("/signup")
+   }
 
   return (
   
     <Box>
         {!correct?<Alert status='error'>
     <AlertIcon />
-    <AlertTitle>Your browser is outdated!</AlertTitle>
+    <AlertTitle>Wrong Credentials</AlertTitle>
    
-  </Alert>:<div>hello</div>}
+  </Alert>:<div></div>}
         <Flex >
          <Box bg={"RGBA(0, 0, 0, 0.92)"} >
         <Image src='https://pro.trackingtime.co/img/login/1.svg' alt='Dan Abramov'  boxSize='650px' h="650px" />
@@ -79,7 +84,7 @@ const Login = () => {
             </Box>
             <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handlechange}>Login</Button>
           </Flex>
-          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Do you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} >Sign Up</span></Text>
+          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Don't you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} onClick={handlesignup}>Sign Up</span></Text>
           <Text fontSize={"15px"} fontWeight="400" marginTop={"40px"} textDecoration="underLine">Terms of service / Privacy Policy</Text>
           </Box>
         </Flex>

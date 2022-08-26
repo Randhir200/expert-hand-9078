@@ -1,4 +1,6 @@
-
+.Home__container{
+    background: #F6F8F9;
+}
 
 
 
@@ -49,7 +51,7 @@
     gap: 10px;
     margin: auto;
     margin-top: 3rem;
-    z-index: -1;
+    /* background-color: black; */
 }
 
 .header__button button{
@@ -69,6 +71,7 @@
     background-color: var(--button-color2);
     color: white;
     font-weight: 500;
+
 }
 
 .btn1:hover{
@@ -191,7 +194,7 @@
 }
 
 .featureCard__container{
-    width: 90%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
@@ -208,6 +211,12 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     border-radius: .875rem;
     padding: 1rem;
+
+}
+
+.featureCard>h2{
+    font-size: 1.5rem;
+    font-weight: 700;
 
 }
 .featureCard>p{
@@ -227,6 +236,15 @@
     display: flex;
     gap: 3rem;
     margin-bottom: 5rem;
+}
+
+.businessApps__container h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+.businessApps__container h2{
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .businessApps__favourite{
@@ -285,4 +303,138 @@
 
 .appCard >p{
     color: #00AD95;
+}
+
+/* =================Timecards,Budgeting========== */
+.budgeting__container{
+    width: 100%;
+    background: white;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    justify-content: space-around;
+    
+    margin-bottom: 8rem;
+}
+
+.cards__container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.budgeting__cards{
+    min-width: 300px;
+    max-width: 300px;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.1rem;
+}
+.budgeting__cards >img{
+    width: 100%;
+}
+.budgeting__cards >h2{
+    font-size: 24px;
+    font-weight: 700;
+}
+.budgeting__cards >p{
+    color: var(--button-color2);
+}
+
+
+
+/* ======Timesheets ad====== */
+.timesheets__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    margin-bottom: 8rem;
+}
+
+.timesheets__Image{
+    max-width: 590px;
+    min-width: 590px;
+    /* border: 1px solid; */
+    padding:3rem;
+    position: relative;
+    z-index: 2;
+}
+.timesheets__Image>img{
+    width: 100%;
+}
+
+.timesheet__btns{
+    display: flex;
+    flex-direction: column;
+    max-width: 590px;
+    min-width: 590px;
+    /* border: 1px solid; */
+    padding: 1rem;
+    align-items:center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.timesheet__btns h1{
+    font-size: 35px;
+    line-height: 45px;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.timesheet__btns p{
+    font-size: 16px;
+    color: var(--button-color2);
+    line-height: 20px;
+    text-align: left;
+}
+
+.timesheets__container-background{
+    position:absolute;
+    top: 4rem;
+    left: 0;
+}
+.timesheets__container-background >img{
+    width: 25%;
+}
+
+
+/* =============Get Started=============*/
+
+.getStarted__container{
+    width: 600px;
+    /* border: 1px solid
+    ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2rem;
+    padding: 1rem;
+    margin-left: 10%;
+
+}
+
+.getStarted__container h1{
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.getStarted__container h2{
+    color: var(--button-color2);
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 600;
 }
