@@ -9,6 +9,8 @@
     margin: auto;
     margin-top: 0.875rem;
     margin-bottom: 0.875rem;
+    background: #F6F8F9;
+
 }
 
 .navbar__logo > img{
@@ -54,7 +56,7 @@
     color: black;
     text-decoration: none;
     margin: auto;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     transition: .4s;
     letter-spacing: 1.68px;
@@ -95,21 +97,19 @@
     background: white;
     transition: 1s;
     border-radius: 0.3rem;
-    z-index: 2;
 }
 .feature__menu-close{
     display: none;
     transition: 1s;
 }
 .feature__menu-open{
-    z-index: 1;
-
+    z-index: 3;
 }
 
 .feature__list {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
     list-style: none;
     /* border: 1px solid; */
     text-align: left;
