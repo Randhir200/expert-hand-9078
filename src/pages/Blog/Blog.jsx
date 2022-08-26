@@ -4,11 +4,13 @@ import BlogGrid from './BlogGrid'
 import { BlogNav } from './BlogNav'
 
 const Blog = () => {
+document.title = 'Blog | Tracking Time'
+
   return (
     <div>
     <BlogNav />
-    <BlogBanner />
-    <BlogGrid />
+    <BlogBanner line={'TIMEKEEPING AND PRODUCTIVITY ARTICLES'} />
+    <BlogGrid count={0} />
     </div> 
   )
 }

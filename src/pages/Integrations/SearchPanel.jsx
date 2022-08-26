@@ -1,9 +1,12 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
+import { useWindowSize } from '../../hooks/useWindowSize'
 
 const SearchPanel = () => {
+  const size = useWindowSize()
+ 
   return (
-    <div className=' text-left mt-10 lg:pr-44 md:pr-0 sm:pr-0'>
+    <div className=' lg:text-left mt-10 md:text-center'>
         <p className=' text-xl font-bold tracking-widest'>
         TRACKING TIME BUTTON FOR CHROME
         </p>
@@ -19,7 +22,10 @@ const SearchPanel = () => {
     </p>
 
 {/* search bar */}
-    <div class="flex">
+  {
+    (size.width > 920) && 
+    (<>
+      <div className="flex">
     <input placeholder='SEARCH YOUR FAVOURITE APP!' className=' border-2 mt-16 w-2/4 placeholder:text-black placeholder:font-bold
      p-6 shadow-lg ' />
      <FaSearch className=' mt-24 -ml-8' />
@@ -35,6 +41,8 @@ See how much time you spend on each task or project! TrackingTime's integrations
 TrackingTime can be integrated with other apps, such as project management, accounting, and customer support. Get instant timesheets and analytics with TrackingTime!
 </p>
 </div>
+    </>) 
+}
         </div>
   )
 }
