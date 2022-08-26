@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import trackingCSS from './mapy.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import LocationMarker from './LocationMarker';
-import MapComponent from './MapComponent';
 export default function Mapy() {
+  const formElement = useRef(null);
+  const inputDistance = useRef(null);
+  const inputDuration = useRef(null);
+  const inputCadence = useRef(null);
   return (
     <div className={trackingCSS.tracking_body}>
       <div className={`${trackingCSS.sidebar}`}>
-        <img src='logo.png' alt='Logo' className='logo' />
+        <img
+          width='100'
+          height='100'
+          src='https://matrixiq.com/wp-content/uploads/2022/04/Track-all-of-your-vehicles-on-one-platform.svg'
+          alt='Logo'
+          className={trackingCSS.logo}
+        />
 
         <ul className={trackingCSS.workouts}>
-          <form className={`${trackingCSS.form}`}>
+          <form
+            ref={formElement}
+            className={`${trackingCSS.form} ${trackingCSS.hidden}`}
+          >
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Type</label>
               <select
@@ -21,15 +33,17 @@ export default function Mapy() {
               </select>
             </div>
             <div className={trackingCSS.form__row}>
-              <label className={trackingCSS.form__label}>Distance</label>
+              <label className={`${trackingCSS.form__label}`}>Distance</label>
               <input
-                className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
+                ref={inputDistance}
+                className={`${trackingCSS.form__input} ''form__input--distance''`}
                 placeholder='km'
               />
             </div>
             <div className={`${trackingCSS.form__row}`}>
               <label className={trackingCSS.form__label}>Duration</label>
               <input
+                ref={inputDuration}
                 placeholder='min'
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
               />
@@ -37,6 +51,7 @@ export default function Mapy() {
             <div className={trackingCSS.form__row}>
               <label className={trackingCSS.form__label}>Cadence</label>
               <input
+                ref={inputCadence}
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
                 placeholder='step/min'
               />
@@ -56,7 +71,7 @@ export default function Mapy() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <LocationMarker />
+        <LocationMarker formEl={formElement} inpDis={inputDistance} inpDu={inputDuration} inpCad={inputCadence} />
         {/* <MapComponent /> */}
         {/* <DraggableMarker /> */}
       </MapContainer>

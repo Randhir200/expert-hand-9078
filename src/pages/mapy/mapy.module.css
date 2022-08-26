@@ -149,13 +149,13 @@ a:visited {
 }
 
 .form__input {
-  width: 100%;
   padding: 0.3rem 2rem;
   font-family: inherit;
   font-size: 1.4rem;
   border: none;
   border-radius: 3px;
   background-color: var(--color-light--3);
+  color: var(--color-dark--1);
   transition: all 0.2s;
 }
 
