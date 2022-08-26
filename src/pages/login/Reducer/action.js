@@ -5,13 +5,9 @@ import { LOGINFAILURE, LOGINLOADING, LOGINSUCESS, SIGNUPFAILURE, SIGNUPLOADING, 
 
 
 const getdata=()=>async(dispatch)=>{
-    dispatch({type:LOGINLOADING})
-    try{ 
-       const res= await axios.get("https://myownapitodo.herokuapp.com/User")
-       dispatch({type:LOGINSUCESS,payload:res.data})
-    }catch(e){
-          dispatch({type:LOGINFAILURE})
-    }
+       const res= await axios.get("https://myownapitodo.herokuapp.com/User")  
+       return res.data
+    
    
     
 
