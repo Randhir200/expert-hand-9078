@@ -438,3 +438,62 @@
     line-height: 32px;
     font-weight: 600;
 }
+
+
+/* ==========Media Screen==============*/
+
+@media screen and (max-width : 1024px){
+    .header__button{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .Signin__google{
+        margin-top: 1rem;
+    }
+
+
+    .featureCard__container{
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+    }
+
+    .businessApps__container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .appCard__container{
+        display: grid;
+        grid-template-columns: repeat(2,0.8fr);
+
+        justify-items: center;
+        padding: 1rem;
+    }
+
+    .cards__container{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .timesheets__container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .timesheets__container-background >img{
+        width: 50%;
+    }
+
+    .timesheet__btns>h1{
+       text-align:center;
+    }
+    .timesheet__btns>p{
+       text-align:center;
+    }
+
+    .getStarted__container{
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+    }
+}
