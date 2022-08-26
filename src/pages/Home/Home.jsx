@@ -18,7 +18,7 @@ const Home = () => {
                     <button className='btn1'>Your work Email</button>
                     <div className='btn2__container'>
                         <button className='btn2'>START FOR FREE !</button>
-                        <p className='btn2__text'>14-dat PRO trial included</p>
+                        <p className='btn2__text'>14-day PRO trial included</p>
                     </div>
                     
                 </div>
@@ -27,9 +27,6 @@ const Home = () => {
                     <i className='Signin__google-icon'><FcGoogle/></i>
                     <a href="#" className='Signin__google-link'>Sign in with Google</a>
                 </div>
-
-
-
 
             </div>
             <div className='header__image'>
@@ -53,19 +50,19 @@ const Home = () => {
                 <div className='featureCard__container'>
                     <div className='featureCard'>
                         <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/article-1.svg" alt="card" />
-                        <h2>Measure your team`s productivity</h2>
+                        <h2 className='featureCard__header'>Measure your team`s productivity</h2>
                         <p>Get a record of the worked hours and keep your projects in order, be abreast of ongoing or completed projects with our super friendly app.</p>
                     </div>
 
                     <div className='featureCard'>
                         <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/article-2.svg" alt="card" />
-                        <h2>The most flexible reporting engine</h2>
+                        <h2 className='featureCard__header'>The most flexible reporting engine</h2>
                         <p>Project budgeting, client billing, payroll, productivity analytics and much more: No matter what kind of reports you need, TrackingTime has got you covered.</p>
                     </div>
 
                     <div className='featureCard'>
                         <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/article-3.svg" alt="card" />
-                        <h2>Measure your team`s productivity</h2>
+                        <h2 className='featureCard__header'>Measure your team`s productivity</h2>
                         <p>See every work in progress and measure the productivity of your team by monitoring them in real time</p>
                     </div>
 
@@ -112,10 +109,84 @@ const Home = () => {
             </div>
 
 
-            <div>
-                
+            <div className='budgeting__container'>
+                <div className='cards__container'>
+                    <div className='budgeting__cards'>
+                        <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/slider-1.svg" alt="asdf" />
+                        <h2>Timecards Approval</h2>
+                        <p>Track clock in and out times with no effort</p>
+                    </div>
+                    
+                    <div className='budgeting__cards'>
+                        <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/slider-2.svg" alt="asdf" />
+                        <h2>Budgeting</h2>
+                        <p>Keep your projects on time and budget.</p>
+                    </div>
+                    
+                    <div className='budgeting__cards'>
+                        <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/slider-3.svg" alt="asdf" />
+                        <h2>Work schedules</h2>
+                        <p>Specify when your employees are expected to be at their job.</p>
+                    </div>
+                    
+                    <div className='budgeting__cards'>
+                        <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/keywords/slider-4.svg" alt="asdf" />
+                        <h2>Timeshet Audits</h2>
+                        <p>Avoid data inconsistencies with just one click.</p>
+                    </div>
+                </div>
+
+
             </div>
 
+            <div className='timesheets__container'>
+                <div className='timesheets__Image'>
+                    <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/home/bottom-action.svg" alt="sdf" />
+                </div>
+                
+                <div className='timesheet__btns'>
+                    <h1>Get professional timesheets done in no time!</h1>
+                    <p>Sign up today and join thousands of people around the world using TrackingTime to simplify their timesheets.</p>
+                    
+                    <div className='header__button'>
+                        <button className='btn1'>Your work Email</button>
+                        <div className='btn2__container'>
+                            <button className='btn2'>START FOR FREE !</button>
+                            <p className='btn2__text'>14-dat PRO trial included</p>
+                        </div>
+                    </div>
+
+                    <div className='Signin__google'>
+                        <i className='Signin__google-icon'><FcGoogle/></i>
+                        <a href="#" className='Signin__google-link'>Sign in with Google</a>
+                    </div>
+                </div>
+
+                <div className='timesheets__container-background'>
+                        <img src="https://trackingtime.co/wp-content/themes/trackingtime-v3/img/keywords/lineas.png" alt="sadf" />
+                </div>
+            </div>
+
+
+            <div className='getStarted__container'>
+                <img src="https://trackingtime.co/wp-content/themes/trackingtime-v4/img/layout/footer/tt.svg" alt="sdf" />
+                <h1>Get Started</h1>
+                <h2>Sign up today and join thousands of people around the world using TrackingTime to make the most of their time.</h2>
+
+                <div className='header__button'>
+                    <button className='btn1'>Your work Email</button>
+                    <div className='btn2__container'>
+                        <button className='btn2'>START FOR FREE !</button>
+                        <p className='btn2__text'>14-day PRO trial included</p>
+                    </div>
+                    
+                </div>
+
+                <div className='Signin__google'>
+                    <i className='Signin__google-icon'><FcGoogle/></i>
+                    <a href="#" className='Signin__google-link'>Sign in with Google</a>
+                </div>
+            </div>
 
           
     </div>

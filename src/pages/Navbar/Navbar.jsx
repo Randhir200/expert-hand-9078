@@ -21,14 +21,18 @@ const Navbar = () => {
           <div className="navbar__buttons">
                 {/* <a href="#" className='navbar__links'>INTEGRATIONS</a> */}
                 <Link to='/integrations' className='navbar__links'>INTEGRATIONS</Link>
+                
                 <Link to='/blog' className='navbar__links'>BLOG</Link>
               {/* <a href="#" className='navbar__links'>BLOG</a> */}
+                
                 <div className='feature__container'>
-                    <div style={{display:'flex',justifyContent:'center'}} onClick = {()=>setArrow(!downArrow)}>
+                    
+                    <div style={{ display: 'flex', justifyContent: 'center',alignItems:'center' }} onClick={() => setArrow(!downArrow)}>
                         <p className='navbar__links' onClick={() => setFeature(!feature)}>FEATURES</p>
                         <i className={downArrow?"downIconUp":"downIconDown"}><BsArrowDown/></i>
                     </div>
-                    <div className={feature?"feature__menu feature__menu-open":"feature__menu feature__menu-close"}>
+                    
+                    <div className={feature ? "feature__menu feature__menu-open" : "feature__menu feature__menu-close"}>
                         <ul className='feature__list'>
                             <li className='feature__item'>
                                 {/* <a href="#" className='navbar__links Fitem'>Time Tracker</a> */}
