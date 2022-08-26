@@ -3,7 +3,7 @@ import {FaSearch} from 'react-icons/fa'
 
 const SearchPanel = () => {
   return (
-    <div className=' text-left mt-10 pr-44'>
+    <div className=' text-left mt-10 lg:pr-44 md:pr-0 sm:pr-0'>
         <p className=' text-xl font-bold tracking-widest'>
         TRACKING TIME BUTTON FOR CHROME
         </p>
