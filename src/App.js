@@ -1,15 +1,12 @@
 import './App.css';
-// import AllRoutes from './components/AllRoutes';
-// import Navbar from './pages/Navbar/Navbar';
-
-import Mapy from './pages/mapy/Mapy';
+import AllRoutes from './components/AllRoutes';
+import Navbar from './pages/Navbar/Navbar';
 function App() {
   return (
-    <div className='App'>
-      {/* <Navbar />
-      <AllRoutes /> */}
-      <Mapy />
-    </div>
+    <div className="App">
+      <Navbar />
+      <AllRoutes />
+    </div> 
   );
 }
 export default App;
