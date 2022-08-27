@@ -63,7 +63,7 @@ export default function LocationMarker({
   // Application Architecture
   class App {
     #mapEvent;
-    #workouts = [];
+    workouts = [];
     constructor() {
       this._toggleElevationField();
     }
@@ -133,9 +133,8 @@ export default function LocationMarker({
         }
 
         //Add new object to workout array
-        this.#workouts.push(workout);
-        console.log(workout);
-        setWorkout(this.#workouts);
+        this.workouts.push(workout);
+        setWorkout(this.workouts);
 
         //Render workout on map as a marker
         this.renderWorkOutMarker(workout);
@@ -184,12 +183,6 @@ export default function LocationMarker({
   return position === null ? null : (
     <Marker position={position}>
       <Popup>
-        You are here. <br />
-        Map bbox: <br />
-        <b>Southwest lng</b>: {bbox[0]} <br />
-        <b>Southwest lat</b>: {bbox[1]} <br />
-        <b>Northeast lng</b>: {bbox[2]} <br />
-        <b>Northeast lat</b>: {bbox[3]}
       </Popup>
     </Marker>
   );

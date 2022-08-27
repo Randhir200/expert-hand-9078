@@ -91,11 +91,11 @@ export default function Mapy() {
 
         {
           workout.map((el)=>(
-            <li
-            className={`${trackingCSS.workout} ${trackingCSS.workout__running}`}
+            <li key={el.id}
+            className={`${trackingCSS.workout} ${el.type==='running'?trackingCSS.workout__running:trackingCSS.workout__cycling}`}
             data-id='1234567890'
           >
-            <h2 className={trackingCSS.workout__title}>Running on April 14</h2>
+            <h2 className={trackingCSS.workout__title}>{el.type} on April 14</h2>
             <div className={trackingCSS.workout__details}>
               <span className={trackingCSS.workout__icon}>🏃‍♂️</span>
               <span className={trackingCSS.workout__value}>5.2</span>
