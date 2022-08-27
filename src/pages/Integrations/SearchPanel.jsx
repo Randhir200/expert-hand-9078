@@ -7,13 +7,13 @@ const SearchPanel = () => {
  
   return (
     <div className=' lg:text-left mt-10 md:text-center'>
-        <p className=' text-xl font-bold tracking-widest'>
+        <p className=' lg:text-xl text-base font-semibold lg:font-bold tracking-widest'>
         TRACKING TIME BUTTON FOR CHROME
         </p>
-        <p className=' text-6xl mt-6 font-bold'>
+        <p className=' lg:text-6xl text-4xl mt-6 font-bold'>
         TrackingTime
         </p>
-        <p className='text-6xl mt-2 font-bold'>
+        <p className='lg:text-6xl text-4xl mt-2 font-bold'>
         Integrations
         </p>
     <p className=' text-xl font-bold mt-10 tracking-widest'>

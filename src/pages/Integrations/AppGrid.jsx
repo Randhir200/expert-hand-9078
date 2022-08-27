@@ -9,6 +9,7 @@ console.log(size)
         {
             AppGridData.map((e,i)=>
             <div className='text-left mt-10 cursor-pointer m-auto ' key={i}>
+              <a href={e.link}>
                 <div className=' p-4 shadow-xl w-20 h-20 rounded-lg'>
                 <img src={e.img} className=' lg:ml-0 md:ml-0 ' />
                 </div>
@@ -20,7 +21,7 @@ console.log(size)
                     </>
                   )
                 }
-              
+              </a>
             </div>
             )
         }
