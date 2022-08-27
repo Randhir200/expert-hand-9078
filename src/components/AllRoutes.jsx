@@ -15,6 +15,8 @@ import { Productivity } from '../pages/Blog/BlogPages/Productivity'
 import RemoteWork from '../pages/Blog/BlogPages/RemoteWork'
 import Practices from '../pages/Blog/BlogPages/Practices'
 import Resources from '../pages/Blog/BlogPages/Resources'
+import Timecards from '../pages/Features/Timecards'
+import Attendancetracking from '../pages/Features/Attendancetracking'
 
 const AllRoutes = () => {
   return (
@@ -25,7 +27,8 @@ const AllRoutes = () => {
           <Route path='/timetracker' element={<Timetracker />} />     
           <Route path='/projectmanagement' element={<Timemanagement />} />     
           <Route path='/onlinetimesheet' element={<Onlinetimesheet/>} />     
-          <Route path='/timecards' element={<Home />} />     
+          <Route path='/timecards' element={<Timecards />} />  
+          <Route path='/attendancetracking' element={<Attendancetracking />} />  
           <Route  path = "/login" element={<Login/>}/>   
           <Route path ="/Signup" element={<Signup/>} />
               {/*  Blog navbar routes */}
