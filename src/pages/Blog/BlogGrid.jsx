@@ -1,11 +1,12 @@
 import React from 'react'
 import { blogs , colorArr } from './BlogGrid.data'
-console.log(colorArr[0])
-const BlogGrid = () => {
+
+const BlogGrid = ({count = 0}) => {
+const data = blogs.filter((e,i)=> i>=count)
   return (
     <div className=' grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:w-3/4 md:w-5/6 sm:w-5/6 m-auto gap-3 pt-20'>
         {
-            blogs.map((e , i)=>
+            data.map((e , i)=>
             <a href={e.link} key={i}  >
                 <div className=' shadow-lg cursor-pointer'>
                     <div className=''>
