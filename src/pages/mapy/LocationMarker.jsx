@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Marker, Popup, useMapEvents, useMap } from 'react-leaflet';
-import { Icon, latLng } from 'leaflet';
+import { Marker, Popup, useMap } from 'react-leaflet';
 import './mapy.css';
 import trackingCSS from './mapy.module.css';
 import L from 'leaflet';
 
-export default function LocationMarker({
+function LocationMarker({
   formEl,
   inpDis,
   inpDu,
@@ -13,12 +12,14 @@ export default function LocationMarker({
   inpTyp,
   inpElv,
   handleActive,
-  setWorkout
+  setWorkout,
+  handleWorkouts,
 }) {
   const [position, setPosition] = useState(null);
   const [bbox, setBbox] = useState([]);
   const map = useMap();
   let type;
+
   class Workout {
     date = new Date();
     id = (Date.now() + '').slice(-10);
@@ -26,6 +27,26 @@ export default function LocationMarker({
       this.coords = coords; // [lat, lng]
       this.distance = distance; // in Km
       this.duration = duration; // in minute
+    }
+
+    _setDescription() {
+      const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+      this.description = `${this.type[0].toUpperCase()}${this.type.slice(
+        1
+      )} on ${months[this.date.getMonth()]} ${this.date.getDate()}`;
     }
   }
 
@@ -35,10 +56,11 @@ export default function LocationMarker({
       super(coords, distance, duration);
       this.cadence = cadence;
       this.calcPace();
+      this._setDescription();
     }
     calcPace() {
       //   min/km
-      this.pace = this.duration / this.distance;
+      this.pace = (this.duration / this.distance).toFixed(2);
       return this.pace;
     }
   }
@@ -49,24 +71,21 @@ export default function LocationMarker({
       super(coords, distance, duration);
       this.elevationGain = elevationGain;
       this.calcSpeed();
+      this._setDescription();
     }
     calcSpeed() {
       //  km/h
-      this.speed = this.distance / (this.duration / 60);
+      this.speed = (this.distance / (this.duration / 60)).toFixed(2);
       return this.speed;
     }
   }
 
-  const run1 = new Running([23.60156, 85.12131], 30, 60, 170);
-  const cycle1 = new Cycling([23.60156, 85.12131], 30, 30, 523);
   //////////////////////
   // Application Architecture
   class App {
     #mapEvent;
     workouts = [];
-    constructor() {
-      this._toggleElevationField();
-    }
+    constructor() {}
 
     _getPosition() {
       map.locate().on('locationfound', function (e) {
@@ -83,22 +102,19 @@ export default function LocationMarker({
       //handling clicks on map
       map.on('click', (mapE) => {
         this.#mapEvent = mapE;
-        this._showForm();
+        //Display Form
+        formEl.current.classList.remove(trackingCSS.hidden);
+        //focus on select field
+        inpDis.current.focus();
       });
     }
 
     _showForm() {
-      formEl.current.classList.remove(trackingCSS.hidden);
-      inpDis.current.focus();
-
-      //Clear input fields
-      inpDis.current.value = inpDu.current.value = inpCad.current.value = '';
-
       //Validate function
       const validate = (...inputs) =>
         inputs.every((inp) => Number.isFinite(inp));
       const allPositiveNum = (...inputs) => inputs.every((inp) => inp > 0);
-      //Display marker
+      //set data
       formEl.current.addEventListener('submit', (e) => {
         e.preventDefault();
         //Get data from form
@@ -134,12 +150,17 @@ export default function LocationMarker({
 
         //Add new object to workout array
         this.workouts.push(workout);
-        setWorkout(this.workouts);
-
+        handleWorkouts(workout);
         //Render workout on map as a marker
         this.renderWorkOutMarker(workout);
 
         //Hide form and input fields
+        formEl.current.classList.add(trackingCSS.hidden);
+        inpDis.current.value =
+          inpDu.current.value =
+          inpCad.current.value =
+          inpElv.current.value =
+            '';
       });
     }
     //Render workout on list
@@ -154,36 +175,45 @@ export default function LocationMarker({
             minWidth: 100,
             autoClose: false,
             closeOnClick: false,
-            title: `${workout.type === 'running' ? 'Running' : 'Cycling'}`,
+            title: `${workout.description}`,
             className: `${workout.type}-popup`,
             autoPan: false,
           })
         )
-        .setPopupContent(`${type === 'running' ? 'Running' : 'Cycling'}`)
+        .setPopupContent(`${workout.description}`)
         .openPopup();
     }
 
     _toggleElevationField() {
       inpTyp.current.addEventListener('change', () => {
         type = inpTyp.current.value;
-        handleActive();
+        inpCad.current
+          .closest('.mapy_form__row__iAZFP ')
+          .classList.toggle('mapy_form__row_hidden__RyRoC');
+
+        if (inpElv.current.closest('.mapy_form__row_hidden__RyRoC') !== null) {
+          inpElv.current
+            .closest('.mapy_form__row__iAZFP')
+            .classList.remove('mapy_form__row_hidden__RyRoC');
+        } else {
+          inpElv.current
+            .closest('.mapy_form__row__iAZFP')
+            .classList.add('mapy_form__row_hidden__RyRoC');
+        }
       });
     }
 
     _renderWorkout(workout) {
-      const html = ``
+      const html = ``;
     }
   }
   let app = new App();
   useEffect(() => {
-    app._loadMap();
     app._getPosition();
-  }, [map]);
-
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>
-      </Popup>
-    </Marker>
-  );
+    app._loadMap();
+    app._toggleElevationField();
+    app._showForm();
+  }, []);
 }
+
+export default LocationMarker;
