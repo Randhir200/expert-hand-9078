@@ -1,10 +1,11 @@
 import React from 'react'
-import { LOGINLOADING, LOGINSUCESS } from '../actiontype'
+import { LOGINFAILURE, LOGINLOADING, LOGINSUCESS } from '../actiontype'
 
 const intialstate2 ={
     loading:false,
     error:false,
-    data:[]
+    data:[],
+    isAuth:false
   }
 
 
@@ -12,15 +13,15 @@ const loginreducer = (state=intialstate2,{type,payload}) => {
     switch (type) {
         case LOGINSUCESS:
          return {
-            ...state,loading:false,error:false,data:payload
+            ...state,loading:false,error:false,isAuth:true
          }
         case LOGINLOADING:
           return {
-            ...state,loading:true,error:false
+            ...state,loading:true,error:false,isAuth:false
           } 
-        case LOGINSUCESS:
+        case LOGINFAILURE:
           return {
-            ...state,loading:false,error:true
+            ...state,loading:false,error:true,isAuth:false
           }
     
     
