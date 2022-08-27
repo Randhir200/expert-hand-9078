@@ -11,6 +11,7 @@ import Home from '../pages/Home/Home'
 import Integrations from '../pages/Integrations/Integrations'
 import Login from '../pages/login/Login'
 import Signup from '../pages/login/Signup'
+import Todo from '../pages/Timetrak/Todo'
 const AllRoutes = () => {
   return (
     <Routes>
@@ -28,7 +29,7 @@ const AllRoutes = () => {
           <Route path='/remotework' element={<RemoteWork />} />     
           <Route path='/practices' element={<Practices />} />     
           <Route path='/resources' element={<Resources />} />     
-          
+           <Route path ="/todo" element={<Todo/>}/>
     </Routes>
   )
 }
