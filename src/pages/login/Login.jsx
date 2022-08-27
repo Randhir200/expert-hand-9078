@@ -6,32 +6,34 @@ import { useState } from 'react'
 import { getdata } from './Reducer/action'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LOGINFAILURE, LOGINSUCESS } from './actiontype'
 const Login = () => {
   
   const dispatch = useDispatch()
-  const {data} = useSelector((state)=>state.login)
+ const {isAuth} = useSelector((state)=>state.login)
   const [mail,setmail] = useState("")
   const [pass,setpass] = useState("")
   const [correct,setcorrect] = useState(true)
   const navigate = useNavigate()
   
-  const handlechange =()=>{
-     console.log(data, mail, pass)
-    let flag =  data.find((el)=>(
+  const handlechange =async ()=>{
+     const da = await dispatch(getdata())
+
+    let flag =  da.find((el)=>(
        el.email == mail && el.password==pass
     ))
      if(flag){
+      dispatch({type:LOGINSUCESS})
       setcorrect(true)
-      //navigate
       navigate("/")
+
      }
-     else{
-      setcorrect(false)
-     }   
+      else{
+        dispatch({type:LOGINFAILURE})
+        setcorrect(false)
+      }
    }
-   useEffect(()=>{
-       dispatch(getdata())
-   },[])
+
    const handlesignup =()=>{
     navigate("/signup")
    }
@@ -84,7 +86,7 @@ const Login = () => {
             </Box>
             <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handlechange}>Login</Button>
           </Flex>
-          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Don't you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine"}} onClick={handlesignup}>Sign Up</span></Text>
+          <Text fontSize={"12px"} fontWeight="bold" color={"grey"}>Don't you have Account  <span style={{fontSize:"13px",fontWeight:"600" ,color:"black", textDecoration:"underLine",cursor:"pointer"}} onClick={handlesignup}>Sign Up</span></Text>
           <Text fontSize={"15px"} fontWeight="400" marginTop={"40px"} textDecoration="underLine">Terms of service / Privacy Policy</Text>
           </Box>
         </Flex>

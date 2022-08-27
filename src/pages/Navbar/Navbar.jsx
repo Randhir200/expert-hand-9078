@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 import {BsArrowDown} from 'react-icons/bs'
+import { useDispatch, useSelector } from 'react-redux'
+import { LOGINFAILURE } from '../login/actiontype'
 
 const Navbar = () => {
     const [feature, setFeature] = useState(false)
     const [downArrow,setArrow] = useState(false)
+    const {isAuth} = useSelector((state)=>state.login)
+    const dispatch = useDispatch()
     let navigate = useNavigate()
 
     const homepath = () => {
@@ -13,7 +17,14 @@ const Navbar = () => {
     }
     
     const handlelogin =()=>{
-        navigate("/login")
+        if(isAuth===true){
+            dispatch({type:LOGINFAILURE})
+
+        }
+        else{
+            navigate("/login")
+        }
+        
     }
 
 
@@ -67,7 +78,7 @@ const Navbar = () => {
                     </div>
                 </div>  
               <button className='navbar__tryit '>TRY IT FOR FREE</button>
-              <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}>Login</button>
+              <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}>{isAuth?"Logout":"Login"}</button>
           </div>
     </div>
   )
