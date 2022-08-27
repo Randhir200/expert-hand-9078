@@ -11,9 +11,9 @@ function LocationMarker({
   inpCad,
   inpTyp,
   inpElv,
-  handleActive,
-  setWorkout,
   handleWorkouts,
+  view,
+  isActive,
 }) {
   const [position, setPosition] = useState(null);
   const [bbox, setBbox] = useState([]);
@@ -85,16 +85,23 @@ function LocationMarker({
   class App {
     #mapEvent;
     workouts = [];
-    constructor() {}
+    constructor() {
+      this.workouts = JSON.parse(localStorage.getItem('workouts')) || [];
+    }
 
     _getPosition() {
       map.locate().on('locationfound', function (e) {
         setPosition(e.latlng);
-        // map.flyTo(e.latlng, map.getZoom());
+        map.flyTo(e.latlng, map.getZoom(13));
         // const radius = e.accuracy;
         // const circle = L.circle(e.latlng, radius);
         // circle.addTo(map);
         setBbox(e.bounds.toBBoxString().split(','));
+      });
+      console.log(this.workouts);
+      this.workouts.map((el) => {
+        this.renderWorkOutMarker(el);
+        console.log('load');
       });
     }
 
@@ -118,6 +125,7 @@ function LocationMarker({
       formEl.current.addEventListener('submit', (e) => {
         e.preventDefault();
         //Get data from form
+        type = inpTyp.current.value;
         const distance = +inpDis.current.value;
         const duration = +inpDu.current.value;
         let { lat, lng } = this.#mapEvent.latlng;
@@ -180,7 +188,9 @@ function LocationMarker({
             autoPan: false,
           })
         )
-        .setPopupContent(`${workout.description}`)
+        .setPopupContent(
+          `${workout.type === 'running' ? '🏃🏾‍♂️' : '🚴🏾‍♀️'} ${workout.description}`
+        )
         .openPopup();
     }
 
@@ -203,11 +213,14 @@ function LocationMarker({
       });
     }
 
-    _renderWorkout(workout) {
-      const html = ``;
+    _moveToPopup(e) {
+      map.setView(e.coords, 13, { animate: true, pan: { duration: 1 } });
     }
   }
   let app = new App();
+  if (isActive) {
+    app._moveToPopup(view);
+  }
   useEffect(() => {
     app._getPosition();
     app._loadMap();

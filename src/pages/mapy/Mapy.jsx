@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import trackingCSS from './mapy.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import LocationMarker from './LocationMarker';
+
 let data;
 export default function Mapy() {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [workouts, setWorkouts] = useState([]);
   const formElement = useRef(null);
   const inputDistance = useRef(null);
@@ -12,14 +13,19 @@ export default function Mapy() {
   const inputCadence = useRef(null);
   const inputType = useRef(null);
   const inputElevation = useRef(null);
-  function handleActive() {
-    setIsActive(!isActive);
-  }
-  console.log(workouts);
+  const listElement = useRef(null);
+  const [view, setView] = useState({});
   function handleWorkouts(workout) {
     data.push(workout);
     localStorage.setItem('workouts', JSON.stringify(data));
     setWorkouts([...data]);
+  }
+
+  function handleList(e) {
+    const workoutEl = e.target.closest('.mapy_workout__rfXP1');
+    let workout = workouts.find((el) => el.id === workoutEl.dataset.id);
+    setView(workout);
+    setIsActive(!isActive);
   }
 
   useEffect(() => {
@@ -70,9 +76,7 @@ export default function Mapy() {
                 className={`${trackingCSS.form__input} ${trackingCSS.form__input}`}
               />
             </div>
-            <div
-              className={`${trackingCSS.form__row}`}
-            >
+            <div className={`${trackingCSS.form__row}`}>
               <label className={trackingCSS.form__label}>Cadence</label>
 
               <input
@@ -82,7 +86,9 @@ export default function Mapy() {
               />
             </div>
 
-            <div className={`${trackingCSS.form__row} ${trackingCSS.form__row_hidden}`}>
+            <div
+              className={`${trackingCSS.form__row} ${trackingCSS.form__row_hidden}`}
+            >
               <label className={trackingCSS.form__label}>Elev Gain</label>
               <input
                 ref={inputElevation}
@@ -96,13 +102,14 @@ export default function Mapy() {
 
           {workouts.map((el) => (
             <li
+              onClick={(e) => handleList(e)}
               key={el.id}
               className={`${trackingCSS.workout} ${
                 el.type === 'running'
                   ? trackingCSS.workout__running
                   : trackingCSS.workout__cycling
               }`}
-              data-id='1234567890'
+              data-id={el.id}
             >
               <h2 className={trackingCSS.workout__title}>{el.description}</h2>
               <div className={trackingCSS.workout__details}>
@@ -115,7 +122,7 @@ export default function Mapy() {
                 <span className={trackingCSS.workout__unit}>km</span>
               </div>
               <div className={trackingCSS.workout__details}>
-                <span className={trackingCSS.workout__icon}> ⏱</span>
+                <span className={trackingCSS.workout__icon}>⏱</span>
                 <span className={trackingCSS.workout__value}>
                   {el.duration}
                 </span>
@@ -124,14 +131,14 @@ export default function Mapy() {
               {el.type === 'running' ? (
                 <>
                   <div className={trackingCSS.workout__details}>
-                    <span className={trackingCSS.workout__icon}> ⚡️</span>
+                    <span className={trackingCSS.workout__icon}>⚡️</span>
                     <span className={trackingCSS.workout__value}>
                       {el.cadence}
                     </span>
                     <span className={trackingCSS.workout__unit}>min/km</span>
                   </div>
                   <div className={trackingCSS.workout__details}>
-                    <span className={trackingCSS.workout__icon}> 🦶🏼</span>
+                    <span className={trackingCSS.workout__icon}>🦶🏼</span>
                     <span className={trackingCSS.workout__value}>
                       {el.pace}
                     </span>
@@ -141,14 +148,14 @@ export default function Mapy() {
               ) : (
                 <>
                   <div className={trackingCSS.workout__details}>
-                    <span className={trackingCSS.workout__icon}> ⚡️</span>
+                    <span className={trackingCSS.workout__icon}>⚡️</span>
                     <span className={trackingCSS.workout__value}>
                       {el.elevationGain}
                     </span>
                     <span className={trackingCSS.workout__unit}>meters</span>
                   </div>
                   <div className={trackingCSS.workout__details}>
-                    <span className={trackingCSS.workout__icon}> 🚲</span>
+                    <span className={trackingCSS.workout__icon}>🚲</span>
                     <span className={trackingCSS.workout__value}>
                       {el.speed}
                     </span>
@@ -177,9 +184,12 @@ export default function Mapy() {
           inpCad={inputCadence}
           inpElv={inputElevation}
           inpTyp={inputType}
-          handleActive={handleActive}
           setWorkout={setWorkouts}
           handleWorkouts={handleWorkouts}
+          listEl={listElement}
+          view={view}
+          isActive={isActive}
+          workouts={workouts}
         />
       </MapContainer>
     </div>

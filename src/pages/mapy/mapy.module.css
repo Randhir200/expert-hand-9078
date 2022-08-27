@@ -99,14 +99,13 @@ a:visited {
 
 .workout__value {
   font-size: 14px;
-  margin-right: 0.5rem;
+  margin-right: 2px;
 }
 
 .workout__unit {
-  font-size: 14px;
+  font-size: auto;
   color: var(--color-light--1);
   text-transform: uppercase;
-  font-weight: 800;
 }
 
 .form {
