@@ -14,7 +14,7 @@ Construct week project
 
 ## Deployment
 
-This project is deployed on netlify here - [Tracking Time Clone](https://time-tracking-clone.netlify.app/)
+Checkout our application here ✌ - [Tracking Time Clone](https://time-tracking-clone.netlify.app/)
 
 ## Contributors
 
