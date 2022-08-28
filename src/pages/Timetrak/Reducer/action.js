@@ -16,3 +16,8 @@ export const DeleteApi =(id)=>async(dispatch)=>{
   await axios.delete(`https://myownapitodo.herokuapp.com/Doctor/${id}`).then(()=>dispatch(getApi()))
     
 }
+
+export const ToggleApi =(id,status)=>async(dispatch)=>{
+  await axios.patch(`https://myownapitodo.herokuapp.com/Doctor/${id}`,{status:!status}).then(()=>dispatch(getApi()))
+    
+}
