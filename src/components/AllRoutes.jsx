@@ -11,12 +11,16 @@ import Onlinetimesheet from '../pages/Features/OnlineTimeSheet'
 import Login from '../pages/login/Login'
 import Signup from '../pages/login/Signup'
 
+import Todo from '../pages/Timetrak/Todo'
+
+
 import { Productivity } from '../pages/Blog/BlogPages/Productivity'
 import RemoteWork from '../pages/Blog/BlogPages/RemoteWork'
 import Practices from '../pages/Blog/BlogPages/Practices'
 import Resources from '../pages/Blog/BlogPages/Resources'
 import Timecards from '../pages/Features/Timecards'
 import Attendancetracking from '../pages/Features/Attendancetracking'
+
 
 const AllRoutes = () => {
   return (
@@ -36,6 +40,9 @@ const AllRoutes = () => {
           <Route path='/remotework' element={<RemoteWork />} />     
           <Route path='/practices' element={<Practices />} />     
           <Route path='/resources' element={<Resources />} />     
+
+           <Route path ="/todo" element={<Todo/>}/>
+
     </Routes>
   )
 }

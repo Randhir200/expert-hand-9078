@@ -31,6 +31,7 @@ const Signup = () => {
           }
            else{
             setcorrect(false)
+            dispatch(postApi(datas))
             navigate("/login")
            }
 
