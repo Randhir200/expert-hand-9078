@@ -5,7 +5,7 @@ Construct week project
 # Unit 5  Project
 
 - This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your tasks by the website.
-- Also website contains functionality for the live tracking for cycling and running. You can use this features after successfuly login. 
+- Also website contains functionality for the live tracking for cycling and running. You can use this features after successfully login. 
 - It was completed within 5 days. We created a good responsive UI. So, you can use this website through phone and tablet also.
 
 ## 🔧 Technologies & Tools
