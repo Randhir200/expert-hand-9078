@@ -1,10 +1,10 @@
 import React from "react";
 
-const BlogBanner = () => {
+const BlogBanner = ({line}) => {
   return (
     <div className=" p-12 w-full bg-yellow-300 text-white">
       <p className=" text-xs font-bold tracking-widest">
-        TIMEKEEPING AND PRODUCTIVITY ARTICLES
+      {line}
       </p>
       <img
         className="h-32 m-auto my-10"

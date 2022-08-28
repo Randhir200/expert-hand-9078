@@ -2,35 +2,32 @@ import React, { useState } from 'react'
 import CSS from "../Features/Timetracker.module.css"
 import { Button, createIcon,Stack, HStack, Input, FormControl,Container, Box, Image,Text, VStack, Heading, border, textDecoration, Spacer, color} from "@chakra-ui/react";
 import { extendTheme } from '@chakra-ui/react'
+import { img1 } from './Timemanagement';
 
 const img = [
     require("../Features/Images/google-key.png"),
-    require("../Features/Images/timemanagement/img1.jpg"),
-    require("../Features/Images/timemanagement/img2.jpg"),
-    require("../Features/Images/timemanagement/img3.jpg"),
-
-    require("../Features/Images/timemanagement/img7.jpg"),  //[6]
-    require("../Features/Images/timemanagement/img8.jpg"), //[7]
-    require("../Features/Images/timemanagement/img9.jpg"), //[8]
-    require("../Features/Images/timemanagement/img10.jpg"), //[8]
-    require("../Features/Images/timemanagement/img11.jpg"), //[8]
+    require("../Features/Images/onlineTimeSheet/img1.jpg"),
+    require("../Features/Images/onlineTimeSheet/img2.jpg"),
+    require("../Features/Images/onlineTimeSheet/img7.jpg"),
+    require("../Features/Images/onlineTimeSheet/img8.jpg"),
+    require("../Features/Images/onlineTimeSheet/img9.jpg"),
+    require("../Features/Images/onlineTimeSheet/img10.jpg"),
+    require("../Features/Images/onlineTimeSheet/img11.jpg"),
+    require("../Features/Images/onlineTimeSheet/img12.jpg"),
+    
    
     
 ]
 
 const btnimg = [
-    require("../Features/Images/timemanagement/img4.jpg"),
-    require("../Features/Images/timemanagement/img5.jpg"),
-    require("../Features/Images/timemanagement/img6.jpg"),
+    require("../Features/Images/onlineTimeSheet/img4.jpg"),
+    require("../Features/Images/onlineTimeSheet/img5.jpg"),
+    require("../Features/Images/onlineTimeSheet/img6.jpg"),
+    require("../Features/Images/onlineTimeSheet/img3.jpg"),
 ]
 
 
-export const img1=[
-    require("../Features/Images/timetracking/img6-1.jpg"), //[5]
-    require("../Features/Images/timetracking/img7-1.jpg"),  //[6]
-    require("../Features/Images/timetracking/img8-1.jpg"), //[7]
-    require("../Features/Images/timetracking/img9-1.jpg"),
-]
+
 
 
 
@@ -190,31 +187,42 @@ const styles ={
   
  const logo1 = "https://trackingtime.co/wp-content/uploads/2020/07/Home-office-and-remote-working-solutions-for-team-collaboration.svg";
 
-const Timemanagement = () => {
+const Onlinetimesheet = () => {
     
     const [id,setId] = useState(0);
     const [status1, setStatus1] = useState(false)
     const [status2, setStatus2] = useState(false)
     const [status3, setStatus3] = useState(false)
+    const [status4, setStatus4] = useState(false)
 
     const handleClick1 =()=>{
         setStatus1(true)
         setStatus2(false)
         setStatus3(false)
+        setStatus4(false)
         setId(0)
     }
     const handleClick2 =()=>{
        setStatus1(false)
         setStatus2(true)
         setStatus3(false)
+        setStatus4(false)
         setId(1)
     }
     const handleClick3 =()=>{
        setStatus1(false)
         setStatus2(false)
         setStatus3(true)
+        setStatus4(false)
         setId(2)
     }
+    const handleClick4 =()=>{
+        setStatus1(false)
+         setStatus2(false)
+         setStatus3(false)
+         setStatus4(true)
+         setId(3)
+     }
 
     
   return (
@@ -222,63 +230,53 @@ const Timemanagement = () => {
 
             <Box style={styles.cont} className={CSS.cont} >
                 
-            {/* <Image src={logo1} style={styles.logo1Div} />
-            <h4 style={styles.headerH4}>Time Tracker for every business</h4> */}
-            <Text style={styles.lastHeading}>THE SIMPLEST TIME TRACKER TO IMPROVE YOUR PRODUCTIVITY!</Text>
+            <Image src={logo1} style={styles.logo1Div} />
+            <h4 style={styles.headerH4}>Online Timesheet For Efficient Companies</h4>
 
-            {/* <FormControl style={styles.form} flexDirection={{base:"column", lg:"row"}}  >
+            <FormControl style={styles.form} flexDirection={{base:"column", lg:"row"}}  >
                 <Input style={styles.formInput} type="email" placeholder="Your Work Email"  width={{base:"100%", lg:"30%"}} />
                 <Button style={styles.formButton} width={{base:"100%", lg:"30%"}}>START FOR FREE !</Button>
-                </FormControl> */}
+                </FormControl>
 
-                {/* <HStack margin="auto" mt={{base:"10px"}} >
+                {/* <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} ></Text> */}
+                <HStack margin="auto" mt={{base:"10px"}} >
                     <Image src={img[0]} width="20px" height="20px"/>
                     <Text style={styles.googleText} _hover={{color:"#00ad95"}}>Sigin in with Google</Text>
-                </HStack> */}
+                </HStack>
                 <VStack >
                     <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >
-                    {/* <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} ></Text> */}
-                    {/* <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} ></Text> */}
+                        
                         <Image src={img[1]} w={{base:"100%", lg:"70%"}} /> 
                         <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Project Management Time Tracking Software to Improve Teamwork</Heading>
-                            <Text style={styles.infoDescText}> <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > Organize your team’s work, </Text> 
-                            communication, and leadership. 
-                            Assign tasks, delegate responsibilities, and monitor the progress of your projects and tasks.</Text>
+                            <Heading style={styles.infoDescHeading}>Manage your work with online timesheet for payroll, invoicing, projects and more</Heading>
+                            <Text style={styles.infoDescText}>With 
+                            <Text as="span" fontWeight="bold" textDecoration="underline" > online timesheets, </Text>
+                             get actionable insights to improve your team’s
+                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > productivity. </Text>
+                            Generate any kind of business report in just a few clicks.</Text>
                         </VStack>
                     </Stack>
                     <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >                   
                         <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Get a weekly overview of your team’s tasks and activities </Heading>
-                            <Text style={styles.infoDescText}>Manage all your time entries per Drag & Drop in a 
-                            beautifully designed calendar view with 
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > TrackingTime Project Management. </Text>
-                            Editing your time entries has never been so easy!</Text>
+                            <Heading style={styles.infoDescHeading}> Professional reports </Heading>
+                            <Text style={styles.infoDescText}>
+                            Create daily, weekly or monthly timesheets for projects, employees and clients. Combine filters to categorize your time data and create 
+                            <Text as="span" fontWeight="bold"   > reports </Text>
+                            tailored to your needs. 
+                            </Text>
                         </VStack>
                         <Image src={img[2]} w={{base:"100%", lg:"70%"}} /> 
-
                     </Stack>
-                    <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >
-                        
-                        <Image src={img[3]} w={{base:"100%", lg:"70%"}} /> 
-                        <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Billable hours vs. non-billable hours</Heading>
-                            <Text style={styles.infoDescText}>Manage all your time entries per Drag & Drop in a 
-                            beautifully designed calendar view with 
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > TrackingTime Project Management. </Text>
-                            Editing your time entries has never been so easy!</Text>
-                        </VStack>
-
-                    </Stack>
-                    
                 </VStack>
                 <Text>
                     
                     <Stack direction={{base:"column",lg:"row"}} w="85%"  margin="auto" mt="20px" >
                         <VStack w={{base:"100%",lg:"50%"}} >
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick1} bg={status1? "black":"white"} color={status1? "white":"black"}  >Easy clock in and clock Out</Button>
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick2} bg={status2? "black":"white"} color={status2? "white":"black"}  >Add and edit time entries for your whole team</Button>
-                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick3} bg={status3? "black":"white"} color={status3? "white":"black"} >Create proffesional time sheets and reports </Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick1} bg={status1? "black":"white"} color={status1? "white":"black"}  > A Time Sheet for Every Process</Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick2} bg={status2? "black":"white"} color={status2? "white":"black"}  > Easy to Customise </Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick3} bg={status3? "black":"white"} color={status3? "white":"black"} > Manage Your Team's Productivty </Button>
+                         <Button style={styles.dispBtn} shadow="md" onClick={handleClick4} bg={status4? "black":"white"} color={status4? "white":"black"} > Proffesional Reporting </Button>
+
                         </VStack>
                         <Stack w={{base:"100%",lg:"50%"}} >
                            <Image src={btnimg[id]} />
@@ -287,49 +285,91 @@ const Timemanagement = () => {
 
                 </Text>
                 <VStack >
+                <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >
+                        
+                        <Image src={img[3]} w={{base:"100%", lg:"70%"}} /> 
+                        <VStack style={styles.infoDesc}>
+                            <Heading style={styles.infoDescHeading}>Stay on top of all your projects with online timesheet</Heading>
+                            <Text style={styles.infoDescText}>One of the worst things about having multiple projects 
+                            going on at any given time is knowing where you’re 
+                            at on all of them. 
+                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > TrackingTime </Text>
+                            helps you with project reports.</Text>
+                        </VStack>
+
+                    </Stack>
                     <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >                
                         <Image src={img[4]} w={{base:"100%", lg:"70%"}} /> 
                         <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Track project due dates</Heading>
-                            <Text style={styles.infoDescText}> Set due dates for your projects and tasks and sync them 
-                            automatically with your favorite calendar apps like 
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > Google Calendar </Text>
-                            or 
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > Outlook. </Text>
-
+                            <Heading style={styles.infoDescHeading}>Analyzing Data</Heading>
+                            <Text style={styles.infoDescText}>
+                            Visualize your 
+                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > time data </Text>      
+                            in simple, but powerful charts to get instant answers to common business questions.
                             </Text>
                         </VStack>
 
                     </Stack>
                     <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >                               
                         <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Project management and team sync</Heading>
-                            <Text style={styles.infoDescText}>Be updated with your
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > team’s projects, </Text>
-                            TrackingTime allows you to know which project each person is working on, 
-                            you could organize and prioritize it according to the work in the office for a better project tracking. </Text> 
+                            <Heading style={styles.infoDescHeading}>Make sure your timesheets are always complete</Heading>
+                            <Text style={styles.infoDescText}>The more hours you track, the more accurate your reports will be. 
+                            TrackingTime’s 
+                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > timesheets </Text>
+                            ensures that your team keeps tracking al their work hours consistently, every day.
+                                </Text> 
                         </VStack>
                         <Image src={img[5]} w={{base:"100%", lg:"70%"}} /> 
 
-                    </Stack> 
-                    <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >                               
-                        <VStack style={styles.infoDesc}>
-                            <Heading style={styles.infoDescHeading}>Duplicate common tasks and projects</Heading>
-                            <Text style={styles.infoDescText}>
-                            Do you often work on similar activities? TrackingTime’s task and 
-                            <Text as="span" fontWeight="bold" textDecoration="underline"  _hover={{textDecoration:"none"}} > project tracking </Text>
-                             make it easy to save time on project setup by duplicating existing projects and 
-                            tasks–– with just one click.
-                            </Text> 
-                        </VStack>
-                        <Image src={img[6]} w={{base:"100%", lg:"70%"}} /> 
-
                     </Stack>            
                 </VStack>
-                <Text style={styles.lastHeading}>TAKE CONTROL OF YOUR PROJECTS AND TASKS.</Text>
-                <Button style={styles.formButton} width={{base:"80%", lg:"20%"}} margin="auto" mb="50px">START FOR FREE TRAIL</Button>
+                <Text style={styles.lastHeading}> 3 SIMPLE STEPS TO GET YOUR TEAM’S ONLINE TIMESHEETS </Text>
+                {/* <Button style={styles.formButton} width={{base:"80%", lg:"20%"}} margin="auto" mb="50px">START FOR FREE TRAIL</Button> */}
+
+                <VStack>
+                    <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >  
+                        <Image src={img[6]} w={{base:"100%", lg:"70%"}} />                              
+                        <VStack style={styles.infoDesc}>
+                            <Heading style={styles.infoDescHeading}>Invite your team</Heading>
+                            <Text style={styles.infoDescText}>
+                            Your team will receive your email invitation to start using 
+                            <Text as="span" fontWeight="bold" > TrackingTime  </Text>
+                            for every work process you request.
+                            </Text> 
+                        </VStack>
+                       
+
+                    </Stack> 
+                    <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >  
+                                                 
+                        <VStack style={styles.infoDesc}>
+                            <Heading style={styles.infoDescHeading}>We collect their hours</Heading>
+                            <Text style={styles.infoDescText}> We’ll make sure your team completes their
+                            <Text as="span" fontWeight="bold"  > timesheets </Text>
+                             anywhere they work and keep them up-to-date.
+                            </Text> 
+                        </VStack>
+                        <Image src={img[7]} w={{base:"100%", lg:"70%"}} />     
+                    </Stack> 
+                    <Stack style={styles.infoMain} flexDirection={{base:"column", lg:"row"}} >  
+                        <Image src={img[8]} w={{base:"100%", lg:"70%"}} />                              
+                        <VStack style={styles.infoDesc}>
+                            <Heading style={styles.infoDescHeading}> Get your reports </Heading>
+                            <Text style={styles.infoDescText}>
+                            You can access, export and share every
+                            <Text as="span" fontWeight="bold"  > timesheets </Text>
+                            submited by your team, and turn them into professional reports.
+                            </Text> 
+                        </VStack>
+                       
+
+                    </Stack> 
+
+                </VStack>
                 
             </Box>
+            <Text style={styles.lastHeading}> DON’T WASTE TIME WITH OLDFASHIONED TIMESHEETS. </Text>
+                <Button style={styles.formButton} width={{base:"80%", lg:"20%"}} margin="auto" mb="50px">START FOR FREE TRAIL</Button>
 
                 <Box>
                     <Stack direction={{base:"column",lg:"row"}} w="85%"  margin="auto" mt="20px" gap="20px">
@@ -362,4 +402,4 @@ const Timemanagement = () => {
   )
 }
 
-export default Timemanagement
+export default Onlinetimesheet
