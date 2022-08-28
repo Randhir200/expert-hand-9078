@@ -14,7 +14,7 @@ Construct week project
 
 ## Deployment
 
-This project is deployed on netlify here - [Tracking Time Clone]()
+This project is deployed on netlify here - [Tracking Time Clone](https://time-tracking-clone.netlify.app/)
 
 ## Contributors
 
@@ -72,6 +72,33 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 ## LogIn / SignUp Page - 
 
+1. Our app has pretty good authentication process. So firstly by clicking on login. you need to fill your email and password. And then it will check that user has id in application or not. 
+
+2. If it has id/password correct. Then  user can be use our features like tracking app or task apps. Else it will throw you a message for invalid username or password.
+
+3. If user does not have account in our application. He/She just create new account by filling up the Signup form. 
+
+4. After click on signup application will be store user's credentials into database. we used our own backend for storing credentials for all users. 
+
+5. If user login successfully then application will redirect user to task app.
+
+6. User can only use task app and workout app if user authenticated. 
+
+## Task app - 
+
+1. It is Authenticated application. If user is signed in then only user can use it. 
+
+2. In this application, It has 5 days Grid with plus button. user can add his tasks according to him. By pressing plus button form will be  appear. 
+
+3. In that form user need to give data like task title , description , durations etc.
+
+4. after submitting that form you will be find sticky note at particular day grid. The data will be stored in database.
+
+5. It will shows you title , description , duration , status , and delete icon. 
+
+6. User can delete this task by clicking on trash icon .
+
+7. Also there is 2 status completed or pending . You can toggle it by clicking on it.  
 
 # Additional comments by contributors -
 
