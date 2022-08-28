@@ -5,7 +5,7 @@ Construct week project
 # Unit 5  Project
 
 - This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your tasks by the website.
-- Also website containes functionality for the live tracking for cycling and running. You can use this features after successfuly login. 
+- Also website contains functionality for the live tracking for cycling and running. You can use this features after successfuly login. 
 - It was completed within 5 days. We created a good responsive UI. So, you can use this website through phone and tablet also.
 
 ## 🔧 Technologies & Tools
@@ -44,7 +44,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 2. You can find applications grid over there and also you can install the app by clicking on it.
 
-3. After clicking on app. you will be redirect to the application page. There you can download the app and see the information about the app. also watch the video for how to add externsion of tracking-time.
+3. After clicking on app. you will be redirect to the application page. There you can download the app and see the information about the app. also watch the video for how to add extension of tracking-time.
 
 4. Extensions are currently not working. we are working on it.
 
@@ -54,11 +54,11 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 1. In blog page you can find some of the blogs for the best time management. 
 
-2. Here is some categories of blogs. you can find perticular blog by clicking on that. 
+2. Here is some categories of blogs. you can find particular blog by clicking on that. 
 
 3. There are 5 types of blogs. Productivity , Remote work , Resources  , Best practices and general.
 
-4.  You can click on any blog and it will redirect you to that perticular blog page.
+4.  You can click on any blog and it will redirect you to that particular blog page.
 
 ## Features page.  - 
 
