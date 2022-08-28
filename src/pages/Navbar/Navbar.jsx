@@ -4,28 +4,25 @@ import { Link, useNavigate } from 'react-router-dom'
 import {RiArrowDropDownLine} from 'react-icons/ri'
 import { useDispatch, useSelector } from 'react-redux'
 import { LOGINFAILURE } from '../login/actiontype'
-
 const Navbar = () => {
-    const [feature, setFeature] = useState(false)
-    const [downArrow,setArrow] = useState(false)
-    const {isAuth} = useSelector((state)=>state.login)
-    const dispatch = useDispatch()
-    let navigate = useNavigate()
+  const [feature, setFeature] = useState(false);
+  const [downArrow, setArrow] = useState(false);
+  const { isAuth } = useSelector((state) => state.login);
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
 
-    const homepath = () => {
-        navigate('/')
-    }
-    
-    const handlelogin =()=>{
-        if(isAuth===true){
-            dispatch({type:LOGINFAILURE})
+  const homepath = () => {
+    navigate('/');
+  };
 
-        }
-        else{
-            navigate("/login")
-        }
-        
+  const handlelogin = () => {
+    if (isAuth === true) {
+      dispatch({ type: LOGINFAILURE });
+    } else {
+      navigate('/login');
     }
+  };
+
 
 
     return (
@@ -79,10 +76,11 @@ const Navbar = () => {
                 </div>  
               <button className='navbar__tryit '>TRY IT FOR FREE</button>
               <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}>{isAuth?"Logout":"Login"}</button>
-          </div>
-    </div>
-    
+              </div>
+ </div>
   )
-}
 
-export default Navbar
+};
+
+
+export default Navbar;
