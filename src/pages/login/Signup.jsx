@@ -28,26 +28,35 @@ const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleAdd = async () => {
-    const datas = {
-      email: email,
-      password: password,
-    };
-
-    const da = await dispatch(getdata());
-    let flag = da.find((el) => el.email === email);
-    if (flag) {
-      setcorrect(true);
-    } else {
-      setcorrect(false);
-      dispatch(postApi(datas));
-      navigate('/login');
+  const handleAdd=async()=>{ 
+    const datas ={
+      email:email,
+      password:password
     }
-  };
-  const handlelog = () => {
-    navigate('/login');
-  };
 
+    const da = await dispatch(getdata())
+    let flag =  da.find((el)=>(
+       el.email === email 
+    ))
+     if(flag){
+      setcorrect(true)
+     }
+      else{
+       setcorrect(false)
+       dispatch(postApi(datas))
+       navigate("/login")
+      }
+
+
+
+
+ 
+   
+}
+const handlelog =()=>{
+ navigate("/login")
+}
+       
   return (
     <Box>
       {correct && (
@@ -189,4 +198,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signup
