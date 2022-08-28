@@ -5,10 +5,10 @@ import Navbar from './pages/Navbar/Navbar';
 import Mapy from './pages/mapy/Mapy';
 function App() {
   return (
-    <div className='App'>
-      {/* <Navbar />
+    <div className="App">
+      <Navbar />
       <AllRoutes />
-      <Footer/> */}
+      <Footer/>
       <Mapy />
     </div>
   );
