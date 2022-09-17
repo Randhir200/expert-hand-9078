@@ -1,4 +1,5 @@
-# TrackingTime - Website Clone
+# [TrackingTime](https://trackingtime.co/) - Website Clone
+# [Netlify Deployment Link](https://time-tracking-clone.netlify.app/)
 ## expert-hand-9078
 Construct week project
 
@@ -11,6 +12,7 @@ Construct week project
 ## 🔧 Technologies & Tools
 
 [![Tools](https://skillicons.dev/icons?i=html,css,javascript,redux,react,tailwind,github,netlify&theme=dark)](https://skillicons.dev)
+ <img src="https://pbs.twimg.com/profile_images/1510602617700950021/K4IoVubu_400x400.jpg" alt="leaflet" width="45" height="45"/>
 
 ## Deployment
 
@@ -117,6 +119,26 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 
 ## [@Randhir200](https://github.com/Randhir200) - 
+
+- created the workouts logs application. In there as a user, I want to log my running or cycling workouts with location, distance, time 
+  pace/speed and steps/minute or elevation gain so I can keep a log of all my running or cycling.
+
+ ### Features
+
+- Map Where user click to add new workout (best way to get location coordinates).
+
+- Geolaction to display map at current location.
+
+- Form to input distance, time, pace, elevation gain
+
+- Display all workouts in a list
+
+- Display all workouts on the map
+
+- Store workout data in the browser unsing local storage API
+
+- on page loads read the saved data from storage and display
+
 
 
 
