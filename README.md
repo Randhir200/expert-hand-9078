@@ -1,12 +1,10 @@
 # [TrackingTime](https://trackingtime.co/) - Website Clone
 # [Netlify Deployment Link](https://time-tracking-clone.netlify.app/)
-## expert-hand-9078
+
 Construct week project
 
 # Unit 5  Project
-
-- This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your tasks by the website.
-- Also website contains functionality for the live tracking for cycling and running. You can use this features after successfully login. 
+ 
 - It was completed within 5 days. We created a good responsive UI. So, you can use this website through phone and tablet also.
 
 ## 🔧 Technologies & Tools
@@ -32,13 +30,17 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 ## Home page -
 
-1. This page as the name suggests has the homepage functionality. This is the landing page, You will find website overview from this page. 
+1. This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your tasks by the website.
 
-2. You can login by here also there are some information about functionality of the website.
+2. This page as the name suggests has the homepage functionality. This is the landing page, You will find website overview from this page. 
 
-3. Some of the features there are mentioned is work in-progress. So after some update we will be put that features in our website.
+3. You can login by here also there are some information about functionality of the website.
 
-4. Below it you can find the follow links you can follow us by there. 
+4. Some of the features there are mentioned is work in-progress. So after some update we will be put that features in our website.
+
+5. Also website contains functionality for the live tracking for cycling and running. You can use this features after successfully login.
+
+6. Below it you can find the follow links you can follow us by there. 
 
 ## Integrations page -
 
