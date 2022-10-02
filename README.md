@@ -1,5 +1,4 @@
 # [TrackingTime](https://trackingtime.co/) - Website Clone
-# [Netlify Deployment Link](https://time-tracking-clone.netlify.app/)
 
 Construct week project
 
