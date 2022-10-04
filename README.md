@@ -43,7 +43,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 <img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/trackingtime.png" alt="Home_Page" />
 
-## Integrations page -
+## Integration page -
 
 1. This page is in under construction . we give it a good UI over there and put some apps over there.
 
@@ -53,7 +53,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 4. Extensions are currently not working. we are working on it.
 
-
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/integration.png" alt="Integration_Page" />
 
 ## Blog page - 
 
@@ -65,6 +65,8 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 4.  You can click on any blog and it will redirect you to that particular blog page.
 
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/blog.png" alt="Blog_Page" />
+
 ## Features page.  - 
 
 1. In navbar there is one section for the features. On hovering over that you can find one dropdown menu for the features. It has list of features which our website provides.
@@ -74,6 +76,8 @@ The TrackingTime website has the following pages and the order of flow is also t
 3. You can find their images for it. and you can also find another image for that product by just hover on it. It is applicable on all the product cards on the website.
 
 4. It has Time Tracker ,Project Management , Online Timesheet ,Time cards , Attendance tracking pages in that. Time reporting is not available as for now.
+
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/features%20(2).png" alt="Feature_Page" />
 
 ## LogIn / SignUp Page - 
 
@@ -88,6 +92,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 5. If user login successfully then application will redirect user to task app.
 
 6. User can only use task app and workout app if user authenticated. 
+
 
 ## Task app - 
 
@@ -104,6 +109,9 @@ The TrackingTime website has the following pages and the order of flow is also t
 6. User can delete this task by clicking on trash icon .
 
 7. Also there is 2 status completed or pending . You can toggle it by clicking on it.  
+
+
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/task.png" alt="Feature_Page" />
 
 # Additional comments by contributors -
 
@@ -142,7 +150,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 - on page loads read the saved data from storage and display
 
-
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/workouts.png" alt="Workout_Page" />
 
 
 ## [@ABVenu](https://github.com/ABVenu) - 
