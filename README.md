@@ -29,7 +29,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 ## Home page -
 
-1. This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your workouts by the website.
+1. This is a time-tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your workouts on the website.
 
 2. This page as the name suggests has the homepage functionality. This is the landing page, You will find website overview from this page. 
 
