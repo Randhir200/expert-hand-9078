@@ -41,6 +41,8 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 6. Below it you can find the follow links you can follow us by there. 
 
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/trackingtime.png" alt="Home_Page" />
+
 ## Integrations page -
 
 1. This page is in under construction . we give it a good UI over there and put some apps over there.
