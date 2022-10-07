@@ -11,16 +11,48 @@ import { useWindowSize } from '../Integrations/useWindowSizeHook';
 
 const Home = () => {
   const size = useWindowSize();
+import { Heading, Box } from '@chakra-ui/react';
+import headerImage from '../../assets/header__image.jpg';
+import Slider from './Slider';
+import { useNavigate } from 'react-router-dom';
+
+const Home = () => {
+  const navigate = useNavigate()
+   function handleLog(){
+    navigate('/login')
+  }
   return (
     <div className='Home__container' style={{width:size.width}}>
       <div className='Header__container' style={{width:size.width}}>
                               {/* custom component for top */}
                               <Header />
 
+
             <div className='Signin__google'>
               <i className='Signin__google-icon'>            <FcGoogle />          </i>
               <a href='#' className='Signin__google-link' >            Sign in with Google          </a>
             </div>
+
+        <div className='header__button'>
+          <button className='btn1'  onClick={handleLog}>Your work Email</button>
+          <div className='btn2__container'>
+            <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
+            <p className='btn2__text'>14-day PRO trial included</p>
+          </div>
+        </div>
+
+        <div className='Signin__google'>
+          <i className='Signin__google-icon'>
+            <FcGoogle />
+          </i>
+          <a href='#' className='Signin__google-link'>
+            Sign in with Google
+          </a>
+        </div>
+      </div>
+      <div className='header__image'>
+        <img src={headerImage} alt='headerImage' />
+
       </div>
             <div className='header__image' style={{backgroundColor:"red"}}>
               <img src={headerImage} alt='headerImage' />
@@ -205,10 +237,18 @@ const Home = () => {
           </p>
 
           <div className='header__button'>
+
            
             <ButtonComp refer="/signup" words="Your Work Email" s="265px" bg="white" bord="0.5px solid black" />
             <ButtonComp refer="/login" bg="#ed565a" words="Start For Free" s="210px" clr="white" hov="#646cc7" />
             
+
+            <button className='btn1' onClick={handleLog}>Your work Email</button>
+            <div className='btn2__container'>
+              <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
+              <p className='btn2__text'>14-dat PRO trial included</p>
+            </div>
+
           </div>
 
           <div className='Signin__google'>
@@ -241,8 +281,16 @@ const Home = () => {
         </h2>
 
         <div className='header__button'>
+
             <ButtonComp refer="/signup" words="Your Work Email" s="265px" bg="white" bord="0.5px solid black" />
             <ButtonComp refer="/login" bg="#ed565a" words="Start For Free" s="210px" clr="white" hov="#646cc7" />
+
+          <button className='btn1' onClick={handleLog}>Your work Email</button>
+          <div className='btn2__container'>
+            <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
+            <p className='btn2__text'>14-day PRO trial included</p>
+          </div>
+
         </div>
 
         <div className='Signin__google'>

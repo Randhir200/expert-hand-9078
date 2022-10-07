@@ -1,6 +1,6 @@
 
 import axios from "axios"
-import { LOGINFAILURE, LOGINLOADING, LOGINSUCESS, SIGNUPFAILURE, SIGNUPLOADING, SIGNUPSUCESS } from "../actiontype"
+
 
 
 
@@ -26,4 +26,4 @@ const postApi = (data)=> async(dispatch)=>{
 
 
 
-export {postApi,getdata}
+export { postApi, getdata }

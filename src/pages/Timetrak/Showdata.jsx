@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { DeleteApi, getApi, ToggleApi } from './Reducer/action'
+import React, { useEffect } from 'react'
 import { ImCross } from "react-icons/im"
 import { MdTimer } from "react-icons/md"
+import { useDispatch, useSelector } from 'react-redux'
+import { DeleteApi, getApi, ToggleApi } from './Reducer/action'
 const Showdata = ({ day }) => {
     const { data } = useSelector((state) => state.task)
     let p = data.filter((el) => (el.day === day))

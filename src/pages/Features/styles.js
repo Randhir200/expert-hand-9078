@@ -3,8 +3,12 @@ export const styles ={
         backgroundColor:"#f6f8f9",
         width:"100%",
         display:"flex",
+
         flexDirection:"column",
         marginTop:"40px"
+
+        flexDirection:"column"
+
         },
     logo1Div:{
         width: "240px",
@@ -24,7 +28,9 @@ export const styles ={
         lineHeight: "66px",
         margin: "0 0 25px",
         fontWeight: 700,
+
         textAlign:"center",
+
     },
     form:{
          display:"flex",
@@ -49,8 +55,6 @@ export const styles ={
         fontWeight:"400",
         border:"1px solid black",
         padding:"2px",
-
-        
     },
     formButton:{
         backgroundColor:"#ed565a",
@@ -62,7 +66,8 @@ export const styles ={
         height:"40px",
         letterSpacing:"1.2px",
         borderRadius:"5px"
-
+        backgroundColor:"#00ad95",
+        color:"white",
     },
     googleText:{
         textDecoration:"0.5px dotted underline",
@@ -110,6 +115,7 @@ export const styles ={
     infoDescText:{
         color:"#7f8488",
         // fontSize:"20px",
+        fontSize:"20px",
         textAlign:"left",
         // border:"1px solid red",
         letterSpacing: "normal",
@@ -136,6 +142,10 @@ export const styles ={
     marginBottom:"50px",
     textAlign: "center",
     fontSize: "18px",
+    marginTop: "30px",
+    marginBottom:"30px",
+    textAlign: "center",
+    fontSize: "14px",
     lineHeight: "22px",
     letterSpacing: "2.52px",
     textTransform: "uppercase",

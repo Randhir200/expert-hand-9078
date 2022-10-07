@@ -1,39 +1,27 @@
-import React, { useState } from 'react'
-import {v4} from "uuid"
 import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,Button,Box,Input,Slider,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb,
-    SliderMark,
-  } from '@chakra-ui/react'
+  Box, Button, Input, Modal, ModalBody,
+  ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay
+} from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { v4 } from "uuid"
 
-  import {useDisclosure} from "@chakra-ui/hooks"
-import { useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getApi, PostApi } from './Reducer/action'
-import {GrAdd} from "react-icons/gr"
+  import { useDisclosure } from "@chakra-ui/hooks"
+import { GrAdd } from "react-icons/gr"
+import { useDispatch } from 'react-redux'
+import { PostApi } from './Reducer/action'
 import Showdata from './Showdata'
 const Friday = ({week}) => {
-  const {data} = useSelector((state)=>state.task)
   const dispatch = useDispatch() 
  const { isOpen, onOpen, onClose } = useDisclosure()
  const [title,settitle] = useState("")
  const [dis,setdis] = useState("")
  const [hour,sethour] = useState(1)
 
- 
- const labelStyles = {
-  mt: '2',
-  ml: '-2.5',
-  fontSize: 'sm',
-}
+const date = new Date();
+
+
+
+
 
 
 
@@ -61,7 +49,7 @@ const handlepost =()=>{
 <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>
-    <ModalHeader>{week} Friday</ModalHeader>
+    <ModalHeader>{week} Friday </ModalHeader>
     <ModalCloseButton />
     <ModalBody pb={6}>
         <Box>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button, createIcon,Stack, HStack, Input, FormControl,Container, Box, Image,Text, VStack, Heading, border, textDecoration, Spacer, color} from "@chakra-ui/react";
 import { extendTheme } from '@chakra-ui/react'
+
+import { useNavigate } from 'react-router-dom';
 import { styles } from './styles';
 
 const img = [
@@ -30,7 +32,11 @@ const Timetracker = () => {
     const [status1, setStatus1] = useState(false)
     const [status2, setStatus2] = useState(false)
     const [status3, setStatus3] = useState(false)
-
+    
+    const navigate = useNavigate()
+   function handleLog(){
+    navigate('/login')
+  }
     const handleClick1 =()=>{
         setStatus1(true)
         setStatus2(false)
@@ -61,7 +67,7 @@ const Timetracker = () => {
 
             <FormControl style={styles.form} flexDirection={{base:"column", lg:"row"}}  >
                 <Input style={styles.formInput} type="email" placeholder="Your Work Email"  width={{base:"100%", lg:"30%"}} />
-                <Button style={styles.formButton} width={{base:"100%", lg:"30%"}}>START FOR FREE !</Button>
+                <Button style={styles.formButton} width={{base:"100%", lg:"30%"}} onClick={handleLog}>START FOR FREE !</Button>
                 </FormControl>
 
                 <HStack margin="auto" mt={{base:"10px"}} >
