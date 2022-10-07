@@ -19,8 +19,15 @@ const Monday = ({week}) => {
     const [dis,setdis] = useState("")
     const [hour,sethour] = useState(1)
    
+    const date = new Date();
 
-
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    
+    // This arrangement can be altered based on how we want the date's format to appear.
+    let currentDate = `${year}-${month}-${day}`
+   
 
 const handlepost =()=>{
    const datas ={
@@ -47,7 +54,10 @@ const handlepost =()=>{
 <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>
-    <ModalHeader>{week} Monday</ModalHeader>
+    <ModalHeader>{week} Monday 
+    {week===currentDate?"today":""}
+    </ModalHeader>
+
     <ModalCloseButton />
     <ModalBody pb={6}>
         <Box>

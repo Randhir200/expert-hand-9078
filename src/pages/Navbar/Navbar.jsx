@@ -7,19 +7,24 @@ import { LOGINFAILURE } from '../login/actiontype'
 const Navbar = () => {
   const [feature, setFeature] = useState(false);
   const [downArrow, setArrow] = useState(false);
-  const { isAuth } = useSelector((state) => state.login);
+  // const { isAuth } = useSelector((state) => state.login);
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
   const homepath = () => {
     navigate('/');
   };
-
+  const isAuth = JSON.parse(localStorage.getItem("isAuth"))
   const handlelogin = () => {
-    if (isAuth === true) {
+    console.log(typeof isAuth)
+    if (isAuth) {
+      
+      localStorage.setItem("isAuth",false)
       dispatch({ type: LOGINFAILURE });
+      navigate("/login")
     } else {
-      navigate('/login');
+
+      navigate('/task');
     }
   };
 

@@ -17,7 +17,10 @@ const Friday = ({week}) => {
  const [dis,setdis] = useState("")
  const [hour,sethour] = useState(1)
 
- 
+const date = new Date();
+
+
+
 
 
 
@@ -46,7 +49,7 @@ const handlepost =()=>{
 <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>
-    <ModalHeader>{week} Friday</ModalHeader>
+    <ModalHeader>{week} Friday </ModalHeader>
     <ModalCloseButton />
     <ModalBody pb={6}>
         <Box>
