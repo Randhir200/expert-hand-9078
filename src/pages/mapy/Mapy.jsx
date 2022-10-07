@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import trackingCSS from './mapy.module.css';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import LocationMarker from './LocationMarker';
-
+import TaskMapy from '../Private/TaskMapy';
 let data;
 export default function Mapy() {
   const [isActive, setIsActive] = useState(false);
@@ -33,6 +33,8 @@ export default function Mapy() {
     setWorkouts(data);
   }, []);
   return (
+    <>
+    <TaskMapy/>
     <div className={trackingCSS.tracking_body}>
       <div className={`${trackingCSS.sidebar}`}>
         <img
@@ -193,5 +195,6 @@ export default function Mapy() {
         />
       </MapContainer>
     </div>
+    </>
   );
 }
