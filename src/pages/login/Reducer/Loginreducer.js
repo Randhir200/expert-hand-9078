@@ -1,4 +1,3 @@
-import React from 'react'
 import { LOGINFAILURE, LOGINLOADING, LOGINSUCESS } from '../actiontype'
 
 const intialstate2 ={

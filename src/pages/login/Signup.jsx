@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
-import { Alert, AlertIcon, AlertTitle, Box, Button, color, Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
+import React from 'react'
+import { Alert, AlertIcon, AlertTitle, Box, Button, Flex, FormControl,Text, Image,Input} from "@chakra-ui/react"
 
 import { Checkbox} from '@chakra-ui/react'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch,} from 'react-redux'
 import { getdata, postApi } from './Reducer/action'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import login from "../../assets/login.png"
 const Signup = () => {
   const [email,setemail] = useState("")
   const [password,setpassword] = useState("")
@@ -55,7 +56,7 @@ const Signup = () => {
   </Alert>}
         <Flex >
          <Box bg={"RGBA(0, 0, 0, 0.92)"} >
-        <Image src='https://pro.trackingtime.co/img/login/1.svg' alt='Dan Abramov'  boxSize='650px' h="650px" />
+        <Image src={login} alt='Dan Abramov'  boxSize='650px' h="650px" />
         </Box>
         <Box display={"block"} margin="auto">
           <Flex  direction={"column"} alignItems="center" justifyContent={"center"} >
@@ -64,37 +65,37 @@ const Signup = () => {
            <Button w="250px"  bg={"none"}  border={"1px solid RGBA(0, 0, 0, 0.16)"} marginBottom="12px">
              <Flex justifyContent={"space-around"} alignItems="center">
               <Image src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" boxSize={"20px"}/>
-              <Text p="5px" fontSize="12px" fontWeight="500">Sign in with Goggle</Text>
+              <Text p="5px" fontSize="12px" fontWeight="500">Sign up with Goggle</Text>
              </Flex>
            </Button>
 
            <Button border={"1px solid RGBA(0, 0, 0, 0.16)"} w="250px" bg={"none"} marginBottom="12px">
              <Flex justifyContent={"space-around"} alignItems="center">
               <Image src="https://media.idownloadblog.com/wp-content/uploads/2018/07/Apple-logo-black-and-white.png" boxSize={"18px"}/>
-              <Text p="5px" fontSize="12px" fontWeight="500">Sign in with apple</Text>
+              <Text p="5px" fontSize="12px" fontWeight="500">Sign up with apple</Text>
              </Flex>
            </Button>
            <Button border={"1px solid RGBA(0, 0, 0, 0.16)"} w="250px" bg={"none"} marginBottom="12px"> 
              <Flex justifyContent={"space-around"} alignItems="center">
               <Image src="https://pbs.twimg.com/profile_images/1268237607147728896/1CRvsTJ1_400x400.png" boxSize={"20px"}/>
-          <Text p="5px" fontSize="12px" fontWeight="500">Sign in with microsoft</Text>
+          <Text p="5px" fontSize="12px" fontWeight="500">Sign up with microsoft</Text>
              </Flex>
            </Button>
           
-            <Text p="5px" fontSize="14px" fontWeight="500">Sign in with your email</Text>
+            <Text p="5px" fontSize="14px" fontWeight="500">Sign up with your email</Text>
             <Box >
               <FormControl marginBottom={"15px"}>
-                <Input placeholder='Email' onChange={(e)=>setemail(e.target.value)}/>
+                <Input placeholder='Email' type="email" onChange={(e)=>setemail(e.target.value)} required/>
                 
               </FormControl>
               <FormControl marginBottom={"15px"}>
-              <Input placeholder='Password' onChange={(e)=>setpassword(e.target.value)}/>
+              <Input placeholder='Password' type="password" onChange={(e)=>setpassword(e.target.value)} required/>
               </FormControl>
                
             </Box>
             <Box>
-            <Text>I agree with the Terms of service & Privacy Policy</Text>
-              <Checkbox ></Checkbox>
+            <Text>I agree with the Terms of service & Privacy Policy  <Checkbox margin="5px"></Checkbox></Text>
+             
             </Box>
             <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handleAdd}>Sign Up</Button>
           </Flex>

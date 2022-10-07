@@ -20,6 +20,7 @@ import Practices from '../pages/Blog/BlogPages/Practices'
 import Resources from '../pages/Blog/BlogPages/Resources'
 import Timecards from '../pages/Features/Timecards'
 import Attendancetracking from '../pages/Features/Attendancetracking'
+import Mapy from '../pages/mapy/Mapy'
 
 
 const AllRoutes = () => {
@@ -42,6 +43,7 @@ const AllRoutes = () => {
           <Route path='/resources' element={<Resources />} />     
 
            <Route path ="/todo" element={<Todo/>}/>
+           <Route path='/workout' element={<Mapy/>}/>
 
     </Routes>
   )
