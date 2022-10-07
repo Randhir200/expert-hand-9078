@@ -1,8 +1,13 @@
+
+
 .footer__main{
+    /* background-color:"#f6f8f9"; */
+   
+
     width: 100%;
     /* border: 1px solid; */
-    margin-top: 5rem;
-    margin-bottom: 4rem;
+    /* margin-top: 5rem;
+    margin-bottom: 4rem; */
 }
 
 .footer__container{
@@ -14,8 +19,10 @@
 .upper__container {
     display: flex;
     justify-content:flex-start;
-
+    flex-wrap: wrap;
     gap: 5rem;
+    
+    /* border: 1px solid red; */
 }
 
 .upper__content{

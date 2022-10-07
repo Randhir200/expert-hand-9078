@@ -3,7 +3,12 @@ export const styles ={
         backgroundColor:"#f6f8f9",
         width:"100%",
         display:"flex",
+
+        flexDirection:"column",
+        marginTop:"40px"
+
         flexDirection:"column"
+
         },
     logo1Div:{
         width: "240px",
@@ -23,6 +28,9 @@ export const styles ={
         lineHeight: "66px",
         margin: "0 0 25px",
         fontWeight: 700,
+
+        textAlign:"center",
+
     },
     form:{
          display:"flex",
@@ -37,6 +45,7 @@ export const styles ={
         
     },
     formInput:{
+        width:"40%",
         marginRight:"25px",
         marginBottom:"20px",
         height:"40px",
@@ -45,13 +54,20 @@ export const styles ={
         fontSize:"16px",
         fontWeight:"400",
         border:"1px solid black",
-
-        
+        padding:"2px",
     },
     formButton:{
+        backgroundColor:"#ed565a",
+        color:"white",
+        textAlign:"center",
+        paddingRight:"25px",
+        paddingLeft:"25px",
+        fontWeight:"600",
+        height:"40px",
+        letterSpacing:"1.2px",
+        borderRadius:"5px"
         backgroundColor:"#00ad95",
         color:"white",
-
     },
     googleText:{
         textDecoration:"0.5px dotted underline",
@@ -98,6 +114,7 @@ export const styles ={
     },
     infoDescText:{
         color:"#7f8488",
+        // fontSize:"20px",
         fontSize:"20px",
         textAlign:"left",
         // border:"1px solid red",
@@ -121,6 +138,10 @@ export const styles ={
      
      lastHeading:{
         // margin: 0!important;
+    marginTop: "50px",
+    marginBottom:"50px",
+    textAlign: "center",
+    fontSize: "18px",
     marginTop: "30px",
     marginBottom:"30px",
     textAlign: "center",

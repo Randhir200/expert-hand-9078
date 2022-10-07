@@ -10,11 +10,7 @@ const img = [
     require("../Features/Images/attendancetracking/img3.jpg"),
     require("../Features/Images/attendancetracking/img4.jpg"),
     require("../Features/Images/attendancetracking/img5.jpg"),
-    require("../Features/Images/attendancetracking/img6.jpg")
-
-    
-   
-    
+    require("../Features/Images/attendancetracking/img6.jpg") 
 ]
 
 const btnimg = [

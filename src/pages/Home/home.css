@@ -1,17 +1,16 @@
 .Home__container{
     background: #F6F8F9;
+    margin-top: 60px;
+    padding-top: 10px;
 }
-
-
-
-
-
-
 .Header__container{
-    max-width: 1163px;
+    /* max-width: 1163px; */
     /* border: 1px solid black; */
     margin: auto;
     margin-top: 2rem;
+    top: 5%;
+   
+   
 }
 
 .header1,
@@ -99,16 +98,22 @@
     /* border: 1px solid; */
     padding: 0px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 .Signin__google-link{
+    font-weight: bold;
+
     font-size: 1rem;
     color: black;
+    z-index: 1;
+    margin-top: 10px;
 }
 
 .Signin__google-link:hover{
-    color: var(--button-color2);
-    transition: .3s;
-    letter-spacing: 1px;
+    /* color: var(--button-color2); */
+    color:#ed565a;
+    transition: .5s;
+     /*letter-spacing: 1px; */
 }
 
 
@@ -135,9 +140,9 @@
     color: var(--button-color2);
 }
 
-.slide__container{
-    /* border: 1px solid; */
-}
+/* .slide__container{
+    
+} */
 
 .slider {
     height: 200px;
@@ -199,6 +204,7 @@
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
     margin: auto;
+   
     /* gap: 1rem; */
 }
 
@@ -211,6 +217,7 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     border-radius: .875rem;
     padding: 1rem;
+    background-color: white;
 
 }
 
@@ -220,7 +227,7 @@
 
 }
 .featureCard>p{
-    color: #00AD95;
+    color: #7f8488;
 }
 
 .featureCard > img{
@@ -261,7 +268,7 @@
 }
 
 .businessApps__favourite >p {
-    color: #00AD95;
+    color: #7f8488;
 }
 .businessApps__favourite>button{
     width: 140px;
@@ -302,7 +309,7 @@
 }
 
 .appCard >p{
-    color: #00AD95;
+    color: #7f8488;
 }
 
 /* =================Timecards,Budgeting========== */
@@ -360,8 +367,9 @@
 }
 
 .timesheets__Image{
-    max-width: 590px;
-    min-width: 590px;
+    /* max-width: 590px;
+    min-width: 590px; */
+    /* width: 100%; */
     /* border: 1px solid; */
     padding:3rem;
     position: relative;
@@ -420,7 +428,7 @@
     text-align: left;
     gap: 2rem;
     padding: 1rem;
-    margin-left: 10%;
+    margin-left: 4%;
 
 }
 

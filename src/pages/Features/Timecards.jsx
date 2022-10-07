@@ -8,11 +8,7 @@ const img = [
     require("../Features/Images/timecards/img1.jpg"),
     require("../Features/Images/timecards/img2.jpg"),
     require("../Features/Images/timecards/img3.jpg"),
-    require("../Features/Images/timecards/img4.jpg"),
-
-    
-   
-    
+    require("../Features/Images/timecards/img4.jpg"),  
 ]
 
 const btnimg = [
@@ -28,6 +24,7 @@ export const img1=[
     require("../Features/Images/timetracking/img8-1.jpg"), //[7]
     require("../Features/Images/timetracking/img9-1.jpg"),
 ]
+
 
 const logo1 = "https://trackingtime.co/wp-content/uploads/2020/07/Home-office-and-remote-working-solutions-for-team-collaboration.svg";
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, createIcon,Stack, HStack, Input, FormControl,Container, Box, Image,Text, VStack, Heading, border, textDecoration, Spacer, color} from "@chakra-ui/react";
 import { extendTheme } from '@chakra-ui/react'
+
 import { useNavigate } from 'react-router-dom';
 import { styles } from './styles';
 
@@ -14,9 +15,7 @@ const img = [
     require("../Features/Images/timetracking/img6-1.jpg"), //[5]
     require("../Features/Images/timetracking/img7-1.jpg"),  //[6]
     require("../Features/Images/timetracking/img8-1.jpg"), //[7]
-    require("../Features/Images/timetracking/img9-1.jpg"), //[8]
-   
-    
+    require("../Features/Images/timetracking/img9-1.jpg"), //[8]  
 ]
 
 const btnimg = [
