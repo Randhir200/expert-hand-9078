@@ -7,12 +7,9 @@ import Blog from '../pages/Blog/Blog';
 import Timetracker from '../pages/Features/Timetracker';
 import Timemanagement from '../pages/Features/Timemanagement';
 import Onlinetimesheet from '../pages/Features/OnlineTimeSheet';
-
 import Login from '../pages/login/Login';
 import Signup from '../pages/login/Signup';
-
 import Todo from '../pages/Timetrak/Todo';
-
 import { Productivity } from '../pages/Blog/BlogPages/Productivity';
 import RemoteWork from '../pages/Blog/BlogPages/RemoteWork';
 import Practices from '../pages/Blog/BlogPages/Practices';
@@ -25,6 +22,7 @@ import PrivateRout from './PrivateRout';
 const AllRoutes = () => {
   return (
     <Routes>
+
       <Route path='/' element={<Home />} />
       <Route path='/integrations' element={<Integrations />} />
       <Route path='/blog' element={<Blog />} />
@@ -42,6 +40,7 @@ const AllRoutes = () => {
       <Route path='/resources' element={<Resources />} />
       <Route path='/task' element={<PrivateRout><Todo /></PrivateRout>} />
       <Route path='/workout' element={<PrivateRout><Mapy /></PrivateRout>} />
+
     </Routes>
   );
 };

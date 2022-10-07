@@ -74,7 +74,7 @@ function handleTask(){
                                 <Link to='/attendancetracking' className='navbar__links Fitem'>Attendance tracking</Link>
                             </li>
                             <li className='feature__item'>
-                                {/* <a href="#" className='navbar__links Fitem'>Time reporting</a> */}
+                               
                                 <Link to='/timereporting' className='navbar__links Fitem'>Time reporting</Link>
                             </li>
                         </ul>

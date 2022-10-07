@@ -1,16 +1,14 @@
 import React from 'react'
-import { Alert, AlertIcon, AlertTitle, Box, Button,Flex, FormControl, Image,Input,Stack,Text, textDecoration } from "@chakra-ui/react"
-import { useDispatch, useSelector } from 'react-redux'
+import { Alert, AlertIcon, AlertTitle, Box, Button,Flex, FormControl, Image,Input,Text} from "@chakra-ui/react"
+import { useDispatch} from 'react-redux'
 import { useState } from 'react'
-
+import login from "../../assets/login.png"
 import { getdata } from './Reducer/action'
-import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LOGINFAILURE, LOGINSUCESS } from './actiontype'
 const Login = () => {
   
   const dispatch = useDispatch()
- const {isAuth} = useSelector((state)=>state.login)
   const [mail,setmail] = useState("")
   const [pass,setpass] = useState("")
   const [correct,setcorrect] = useState(true)
@@ -20,12 +18,13 @@ const Login = () => {
      const da = await dispatch(getdata())
 
     let flag =  da.find((el)=>(
-       el.email == mail && el.password==pass
+       el.email === mail && el.password===pass
     ))
      if(flag){
       dispatch({type:LOGINSUCESS})
       setcorrect(true)
       navigate("/task")
+
 
      }
       else{
@@ -48,7 +47,7 @@ const Login = () => {
   </Alert>:<div></div>}
         <Flex >
          <Box bg={"RGBA(0, 0, 0, 0.92)"} >
-        <Image src='https://pro.trackingtime.co/img/login/1.svg' alt='Dan Abramov'  boxSize='650px' h="650px" />
+        <Image src={login} alt='Dan Abramov'  boxSize='650px' h="650px" />
         </Box>
         <Box display={"block"} margin="auto">
           <Flex  direction={"column"} alignItems="center" justifyContent={"center"} >
@@ -77,11 +76,11 @@ const Login = () => {
             <Text p="5px" fontSize="14px" fontWeight="500">Sign in with your email</Text>
             <Box >
               <FormControl marginBottom={"15px"}>
-                <Input placeholder='Email'  onChange={(e)=>setmail(e.target.value)}/>
+                <Input placeholder='Email' type="email" onChange={(e)=>setmail(e.target.value)} required/>
                 
               </FormControl>
               <FormControl marginBottom={"15px"}>
-              <Input placeholder='Password' onChange={(e)=>setpass(e.target.value)} />
+              <Input placeholder='Password' type="password" onChange={(e)=>setpass(e.target.value)} required/>
               </FormControl>
             </Box>
             <Button w="250px" bg="RGBA(0, 0, 0, 0.92)" color={"white"} onClick={handlechange}>Login</Button>

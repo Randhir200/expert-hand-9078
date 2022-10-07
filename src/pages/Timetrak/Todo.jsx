@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import {Box,Image} from "@chakra-ui/react"
+import React from 'react'
+import Friday from './Friday'
 import Monday from './Monday'
+
 import Tuesday from './Tuesday'
 import Wednesday from './Wednesday'
 import Thursday from './thursday'
-import Friday from './Friday'
+
 import TaskMapy from '../Private/TaskMapy';
+
 
 const Todo = () => {
     let curr = new Date 
@@ -15,9 +17,6 @@ for (let i = 1; i <=5; i++) {
     let day = new Date(curr.setDate(first)).toISOString().slice(0, 10)
     week.push(day)
   }
-  const [hour,sethours] = useState()
-  const [min,setmin] = useState()
-  const [sec,setsec] = useState()
 
 //  function x(){
 //    const time = new Date()
