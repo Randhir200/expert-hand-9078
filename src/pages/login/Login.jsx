@@ -23,7 +23,8 @@ const Login = () => {
      if(flag){
       dispatch({type:LOGINSUCESS})
       setcorrect(true)
-      navigate("/todo")
+      navigate("/task")
+
 
      }
       else{

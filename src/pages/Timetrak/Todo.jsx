@@ -1,9 +1,13 @@
 import React from 'react'
 import Friday from './Friday'
 import Monday from './Monday'
-import Thursday from './thursday'
+
 import Tuesday from './Tuesday'
 import Wednesday from './Wednesday'
+import Thursday from './thursday'
+
+import TaskMapy from '../Private/TaskMapy';
+
 
 const Todo = () => {
     let curr = new Date 
@@ -32,6 +36,8 @@ for (let i = 1; i <=5; i++) {
 //  },[])
 
   return (
+    <>
+    <TaskMapy/>
   <div>
 
    {/* <h3>{hour}:{min}:{sec}</h3> */}
@@ -43,7 +49,7 @@ for (let i = 1; i <=5; i++) {
      <Friday week={week[4]}/>
    </div>
   </div>
-
+  </>
   )
 }
 

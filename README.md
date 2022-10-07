@@ -1,20 +1,19 @@
-# TrackingTime - Website Clone
-## expert-hand-9078
+# [TrackingTime](https://trackingtime.co/) - Website Clone
+
 Construct week project
 
 # Unit 5  Project
-
-- This is an time tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your tasks by the website.
-- Also website contains functionality for the live tracking for cycling and running. You can use this features after successfully login. 
+ 
 - It was completed within 5 days. We created a good responsive UI. So, you can use this website through phone and tablet also.
 
 ## 🔧 Technologies & Tools
 
 [![Tools](https://skillicons.dev/icons?i=html,css,javascript,redux,react,tailwind,github,netlify&theme=dark)](https://skillicons.dev)
+ <img src="https://pbs.twimg.com/profile_images/1510602617700950021/K4IoVubu_400x400.jpg" alt="leaflet" width="45" height="45"/>
 
 ## Deployment
 
-This project is deployed on netlify here - [Tracking Time Clone]()
+Checkout our application here ✌ - [Tracking Time Clone](https://time-tracking-clone.netlify.app/)
 
 ## Contributors
 
@@ -30,15 +29,21 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 ## Home page -
 
-1. This page as the name suggests has the homepage functionality. This is the landing page, You will find website overview from this page. 
+1. This is a time-tracking website clone that we made during the construct week at Masai School. You can put your daily tasks to do and also you can track your workouts on the website.
 
-2. You can login by here also there are some information about functionality of the website.
+2. This page as the name suggests has the homepage functionality. This is the landing page, You will find website overview from this page. 
 
-3. Some of the features there are mentioned is work in-progress. So after some update we will be put that features in our website.
+3. You can login by here also there are some information about functionality of the website.
 
-4. Below it you can find the follow links you can follow us by there. 
+4. Some of the features there are mentioned is work in-progress. So after some update we will be put that features in our website.
 
-## Integrations page -
+5. Also website contains functionality for the live tracking for cycling and running. You can use this features after successfully login.
+
+6. Below it you can find the follow links you can follow us by there. 
+
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/trackingtime.png" alt="Home_Page" />
+
+## Integration page -
 
 1. This page is in under construction . we give it a good UI over there and put some apps over there.
 
@@ -48,7 +53,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 4. Extensions are currently not working. we are working on it.
 
-
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/integration.png" alt="Integration_Page" />
 
 ## Blog page - 
 
@@ -60,6 +65,8 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 4.  You can click on any blog and it will redirect you to that particular blog page.
 
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/blog.png" alt="Blog_Page" />
+
 ## Features page.  - 
 
 1. In navbar there is one section for the features. On hovering over that you can find one dropdown menu for the features. It has list of features which our website provides.
@@ -70,8 +77,41 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 4. It has Time Tracker ,Project Management , Online Timesheet ,Time cards , Attendance tracking pages in that. Time reporting is not available as for now.
 
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/features%20(2).png" alt="Feature_Page" />
+
 ## LogIn / SignUp Page - 
 
+1. Our app has pretty good authentication process. So firstly by clicking on login. you need to fill your email and password. And then it will check that user has id in application or not. 
+
+2. If it has id/password correct. Then  user can be use our features like tracking app or task apps. Else it will throw you a message for invalid username or password.
+
+3. If user does not have account in our application. He/She just create new account by filling up the Signup form. 
+
+4. After click on signup application will be store user's credentials into database. we used our own backend for storing credentials for all users. 
+
+5. If user login successfully then application will redirect user to task app.
+
+6. User can only use task app and workout app if user authenticated. 
+
+
+## Task app - 
+
+1. It is Authenticated application. If user is signed in then only user can use it. 
+
+2. In this application, It has 5 days Grid with plus button. user can add his tasks according to him. By pressing plus button form will be  appear. 
+
+3. In that form user need to give data like task title , description , durations etc.
+
+4. after submitting that form you will be find sticky note at particular day grid. The data will be stored in database.
+
+5. It will shows you title , description , duration , status , and delete icon. 
+
+6. User can delete this task by clicking on trash icon .
+
+7. Also there is 2 status completed or pending . You can toggle it by clicking on it.  
+
+
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/task.png" alt="Feature_Page" />
 
 # Additional comments by contributors -
 
@@ -91,6 +131,26 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 ## [@Randhir200](https://github.com/Randhir200) - 
 
+- created the workouts logs application. In there as a user, I want to log my running or cycling workouts with location, distance, time 
+  pace/speed and steps/minute or elevation gain so I can keep a log of all my running or cycling.
+
+ ### Features
+
+- Map Where user click to add new workout (best way to get location coordinates).
+
+- Geolaction to display map at current location.
+
+- Form to input distance, time, pace, elevation gain
+
+- Display all workouts in a list
+
+- Display all workouts on the map
+
+- Store workout data in the browser unsing local storage API
+
+- on page loads read the saved data from storage and display
+
+<img src="https://github.com/Randhir200/expert-hand-9078/blob/master/public/workouts.png" alt="Workout_Page" />
 
 
 ## [@ABVenu](https://github.com/ABVenu) - 

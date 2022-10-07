@@ -1,7 +1,7 @@
 .navbar__container{
     position: sticky;
     width: 80%;
-    display: flex;
+    /* display: flex; */
     /* border: 1px solid  black; */
     padding: 0.875rem;
     justify-content: space-between;
@@ -19,20 +19,20 @@
 }
 
 .navbar__buttons{
-    display: flex;
+    /* display: flex; */
     gap: 2rem;
 }
 .navbar__tryit{
     background-color: #F6F8F9;
     border-color: #00AD95;
-    border-radius: 0.5rem;
+    border-radius: 5px;
     border: 2px solid;
     width:8.75rem;
     height: 2rem;
     border-width:0.12rem;
     margin: auto;
     color: #00AD95;
-    font-weight: bolder;
+    font-weight: bold;
 }
 #Login__button{
     background-color:#00AD95;

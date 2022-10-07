@@ -4,11 +4,11 @@ import Footer from './pages/Footer/Footer';
 import Navbar from './pages/Navbar/Navbar';
 function App() {
   return (
-    <div className="App overflow-hidden">
+    <div className="App">
       <Navbar />
       <AllRoutes />
       <Footer/>
-    </div> 
+    </div>
   );
 }
 export default App;

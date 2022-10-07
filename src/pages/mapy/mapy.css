@@ -9,7 +9,6 @@
   --color-light--3: rgb(214, 222, 224);
 }
 
-
 /* Popup width is defined in JS using options */
 .leaflet_popup .leaflet_popup_content_wrapper {
   background-color: var(--color-dark--1);
@@ -31,8 +30,11 @@
   background-color: var(--color-dark--1);
   border-radius: 3px;
   color: white;
-  
 }
 .cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--2);
+  background-color: var(--color-dark--1);
+  border-radius: 3px;
   border-left: 5px solid var(--color-brand--1);
+  color: white;
 }
