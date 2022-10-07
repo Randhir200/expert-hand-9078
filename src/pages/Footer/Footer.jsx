@@ -4,9 +4,9 @@ import {AiFillLinkedin,AiFillFacebook,AiFillTwitterSquare,AiOutlineCopyrightCirc
 
 const Footer = () => {
   return (
-    <div className='footer__main'>
+    <div className='footer__main' style={{backgroundColor:"#f6f8f9"}}>
         <div className='footer__container'>
-              <div className='upper__container'>
+              <div className='upper__container' >
                   <div className='upper__content'>
                       <h2>Industries</h2>
                       <p>Time tracking for Graphic Designers</p>

@@ -29,11 +29,11 @@ const AllRoutes = () => {
           <Route path='/' element={<Home />} />     
           <Route path='/integrations' element={<Integrations />} />     
           <Route path='/blog' element={<Blog />} />     
-          <Route path='/timetracker' element={<Timetracker />} />     
-          <Route path='/projectmanagement' element={<Timemanagement />} />     
-          <Route path='/onlinetimesheet' element={<Onlinetimesheet/>} />     
-          <Route path='/timecards' element={<Timecards />} />  
-          <Route path='/attendancetracking' element={<Attendancetracking />} />  
+          <Route path='/features/timetracker' element={<Timetracker />} />     
+          <Route path='/features/projectmanagement' element={<Timemanagement />} />     
+          <Route path='/features/onlinetimesheet' element={<Onlinetimesheet/>} />     
+          <Route path='/features/timecards' element={<Timecards />} />  
+          <Route path='/features/attendancetracking' element={<Attendancetracking />} />  
           <Route  path = "/login" element={<Login/>}/>   
           <Route path ="/Signup" element={<Signup/>} />
               {/*  Blog navbar routes */}

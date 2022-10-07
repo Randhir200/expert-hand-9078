@@ -1,16 +1,18 @@
 .navbar__container{
-    position: sticky;
-    width: 80%;
-    /* display: flex; */
+    top: 0%;
+    position: fixed;
+    width: 100%;
+    display: flex;
     /* border: 1px solid  black; */
-    padding: 0.875rem;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: space-around;
     align-items: center;
-    margin: auto;
-    margin-top: 0.875rem;
-    margin-bottom: 0.875rem;
+    /* margin: auto; */
+    /* margin-top: 0.475rem; */
     background: #F6F8F9;
-
+    padding: 0px 200px 0px 200px;
+    z-index: 2;
+    gap:5rem
 }
 
 .navbar__logo > img{
@@ -26,34 +28,37 @@
     background-color: #F6F8F9;
     border-color: #00AD95;
     border-radius: 5px;
-    border: 2px solid;
+    border: 2px solid #ff6d6a;
     width:8.75rem;
     height: 2rem;
     border-width:0.12rem;
     margin: auto;
-    color: #00AD95;
-    font-weight: bold;
+    color: #ff6d6a;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing:1px;
 }
 #Login__button{
-    background-color:#00AD95;
+    background-color:#ff6d6a;
     color: white;
 }
 #Login__button:hover{
     background-color:#F6F8F9;
-     color: #00AD95;
+     color: #ff6d6a;
      cursor: pointer;
      
 
 }
 .navbar__tryit:hover{
-    background-color: #00AD95;
+    background-color: #ff6d6a;
     color:#F6F8F9 ;
     cursor: pointer;
     transition: .5s;
 }
 
 .navbar__links{
-    color: black;
+    color: #2d2d31;
+    font-size: 12px;
     text-decoration: none;
     margin: auto;
     font-weight: 700;
@@ -62,7 +67,7 @@
     letter-spacing: 1.68px;
 }
 .navbar__links:hover{
-    color: #00AD95;
+    color:#ff6d6a;
 }
 
 
@@ -114,9 +119,13 @@
     /* border: 1px solid; */
     text-align: left;
     padding: 1rem;
-
+    font-weight: bold;
+    line-height: 2;
+    color: black;
+   
 }
 
 .Fitem{
-    font-weight: 700;
+    font-weight: 1000;
+    font-size: 15px;
 }
