@@ -5,17 +5,22 @@ import { FcGoogle } from 'react-icons/fc';
 import { Heading, Box } from '@chakra-ui/react';
 import headerImage from '../../assets/header__image.jpg';
 import Slider from './Slider';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate()
+   function handleLog(){
+    navigate('/login')
+  }
   return (
     <div className='Home__container'>
       <div className='Header__container'>
         <Header />
 
         <div className='header__button'>
-          <button className='btn1'>Your work Email</button>
+          <button className='btn1'  onClick={handleLog}>Your work Email</button>
           <div className='btn2__container'>
-            <button className='btn2'>START FOR FREE !</button>
+            <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
             <p className='btn2__text'>14-day PRO trial included</p>
           </div>
         </div>
@@ -213,9 +218,9 @@ const Home = () => {
           </p>
 
           <div className='header__button'>
-            <button className='btn1'>Your work Email</button>
+            <button className='btn1' onClick={handleLog}>Your work Email</button>
             <div className='btn2__container'>
-              <button className='btn2'>START FOR FREE !</button>
+              <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
               <p className='btn2__text'>14-dat PRO trial included</p>
             </div>
           </div>
@@ -250,9 +255,9 @@ const Home = () => {
         </h2>
 
         <div className='header__button'>
-          <button className='btn1'>Your work Email</button>
+          <button className='btn1' onClick={handleLog}>Your work Email</button>
           <div className='btn2__container'>
-            <button className='btn2'>START FOR FREE !</button>
+            <button className='btn2' onClick={handleLog}>START FOR FREE !</button>
             <p className='btn2__text'>14-day PRO trial included</p>
           </div>
         </div>

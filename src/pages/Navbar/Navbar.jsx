@@ -24,7 +24,13 @@ const Navbar = () => {
   };
 
 
-
+function handleTask(){
+  if (isAuth === true) {
+    navigate('/task');
+  } else {
+    navigate('/login');
+  }
+}
     return (
     <div className='navbar__container lg:flex '>
           <div className='navbar__logo' onClick={homepath}>
@@ -74,7 +80,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>  
-              <button className='navbar__tryit '>TRY IT FOR FREE</button>
+              <button className='navbar__tryit ' onClick={handleTask}>TRY IT FOR FREE</button>
               <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}>{isAuth?"Logout":"Login"}</button>
               </div>
  </div>
