@@ -3,12 +3,9 @@ export const styles ={
         backgroundColor:"#f6f8f9",
         width:"100%",
         display:"flex",
-
         flexDirection:"column",
-        marginTop:"40px"
-
+        marginTop:"40px",
         flexDirection:"column"
-
         },
     logo1Div:{
         width: "240px",
@@ -65,7 +62,7 @@ export const styles ={
         fontWeight:"600",
         height:"40px",
         letterSpacing:"1.2px",
-        borderRadius:"5px"
+        borderRadius:"5px",
         backgroundColor:"#00ad95",
         color:"white",
     },
