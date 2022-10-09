@@ -138,7 +138,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 - Map Where user click to add new workout (best way to get location coordinates).
 
-- Geolaction to display map at current location.
+- Geolocation to display map at current location.
 
 - Form to input distance, time, pace, elevation gain
 
@@ -146,7 +146,7 @@ The TrackingTime website has the following pages and the order of flow is also t
 
 - Display all workouts on the map
 
-- Store workout data in the browser unsing local storage API
+- Store workout data in the browser using local storage API
 
 - on page loads read the saved data from storage and display
 
