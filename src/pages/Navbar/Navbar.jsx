@@ -41,10 +41,10 @@ const Navbar = () => {
             } className={feature ? "feature__menu feature__menu-open" : "feature__menu feature__menu-close"}>
     <ul className='feature__list'>
         <li className='feature__item'>
-            <Link to='' className='navbar__links Fitem'>Time Tracker</Link>
+            <Link to='/features/timetracker' className='navbar__links Fitem'>Time Tracker</Link>
         </li>
         <li className='feature__item'>
-            <Link to='' className='navbar__links Fitem'>Project Management</Link>
+            <Link to='/features/projectmanagement' className='navbar__links Fitem'>Project Management</Link>
         </li>
         <li className='feature__item'>
             <Link to='/features/onlinetimesheet' className='navbar__links Fitem'>Online Timesheet</Link>
@@ -56,13 +56,13 @@ const Navbar = () => {
             <Link to='/features/attendancetracking' className='navbar__links Fitem'>Attendance tracking</Link>
         </li>
           <li className='feature__item'>
-              <Link to='' className='navbar__links Fitem'>Time reporting</Link>
+              <Link to='/' className='navbar__links Fitem'>Time reporting</Link>
           </li>
       </ul>
   </div>
                 </div>  
               <button className='navbar__tryit '><Link to="/signup" >TRY IT FOR FREE </Link> </button>
-              <button className='navbar__tryit navbar__links' id='Login__button' ><Link to="login"> Login </Link></button>
+              <button className='navbar__tryit navbar__links' id='Login__button' ><Link to = "/login"> Login </Link></button>
               </div>
         
  </div>
