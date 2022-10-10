@@ -24,7 +24,6 @@ const Navbar = () => {
 
       <div className="navbar__buttons text-sm lg:flex">
               <Link to='/integrations' className='navbar__links '>INTEGRATIONS</Link>
-              <br />
               <Link to='/blog' className='navbar__links '>BLOG</Link>
               
         <div className='feature__container'>

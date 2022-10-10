@@ -38,7 +38,7 @@ const handlepost =()=>{
         id:v4(),
         day:"monday"
    }
- 
+   onClose()
   // data.mon.push(datas)
    dispatch(PostApi(datas))
   
