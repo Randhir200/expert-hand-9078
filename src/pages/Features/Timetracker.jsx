@@ -60,7 +60,7 @@ const Timetracker = () => {
   return (
     <Box>
 
-            <Box style={styles.cont} className={CSS.cont} >
+            <Box style={styles.cont}  >
                 
             <Image src={logo1} style={styles.logo1Div} />
             <h4 style={styles.headerH4}>Time Tracker for every business</h4>

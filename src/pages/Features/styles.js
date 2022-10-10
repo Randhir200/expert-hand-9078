@@ -63,7 +63,7 @@ export const styles ={
         height:"40px",
         letterSpacing:"1.2px",
         borderRadius:"5px",
-        backgroundColor:"#00ad95",
+        // backgroundColor:"#00ad95",
         color:"white",
     },
     googleText:{
