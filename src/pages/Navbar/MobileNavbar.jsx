@@ -46,24 +46,22 @@ function DrawerExample() {
                     />
               </DrawerHeader>
               <DrawerBody lineHeight="3.2">
-                <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/integrations"  style={{textDecoration:"none"}}> Integrations </Link> </Text>
+                 <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/integrations"  style={{textDecoration:"none"}}> Integrations </Link> </Text>
                 <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/blog" style={{textDecoration:"none"}}> Blog         </Link> </Text>
-                <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link  style={{textDecoration:"none"}}> Features     </Link> </Text>
-                <Box
-                 marginLeft="10px"
-                 lineHeight="3.4" >
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/features/timetracker" >Time Tracker       </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/features/projectmanagement" >Project Management </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/onlinetimesheet" style={{textDecoration:"none"}}>Online Timesheet   </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/timecards" style={{textDecoration:"none"}}  >Timecard           </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/features/attendancetracking" >Attendance Tracking</Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/" >Time Reporting     </Link>  </Text>
+               <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold">Features</Text>
+                <Box marginLeft="10px" lineHeight="3.4" >
+                   <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/timetracker" style={{textDecoration:"none"}}  >Time Tracker       </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/projectmanagement" style={{textDecoration:"none"}}  >Project Management </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/onlinetimesheet"  style={{textDecoration:"none"}}>Online Timesheet   </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link  to="/features/timecards" style={{textDecoration:"none"}}  >Timecard           </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/attendancetracking"style={{textDecoration:"none"}}  >Attendance Tracking</Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"> Time Reporting </Text>
 
                   <ButtonComp refer="/signup" words="Your Work Email" s="210px" bg="white" bord="0.5px solid black" />
                   <ButtonComp refer="/login" bg="#ed565a" words="Start For Free" s="210px" clr="white" hov="#646cc7" />
   
                 </Box>
-              </DrawerBody>
+              </DrawerBody> 
     
               <DrawerFooter>
                 <Button variant='outline' mr={3} onClick={onClose}>
@@ -108,24 +106,22 @@ function DrawerExample() {
                     />
               </DrawerHeader>
               <DrawerBody lineHeight="3.2">
-              <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/integrations"  style={{textDecoration:"none"}}> Integrations </Link> </Text>
+                 <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/integrations"  style={{textDecoration:"none"}}> Integrations </Link> </Text>
                 <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link to="/blog" style={{textDecoration:"none"}}> Blog         </Link> </Text>
-                <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold"><Link  style={{textDecoration:"none"}}> Features     </Link> </Text>
-                <Box
-                 marginLeft="10px"
-                 lineHeight="3.4" >
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}}  >Time Tracker       </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/" >Project Management </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/features/onlinetimesheet" >Online Timesheet   </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/timecards" style={{textDecoration:"none"}}  >Timecard           </Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="" >Attendance Tracking</Link>  </Text>
-                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link style={{textDecoration:"none"}} to="/" >Time Reporting     </Link>  </Text>
+               <Text color="#242954" _hover={{color:"#ed565a", cursor:"pointer"}}  fontWeight="bold">Features</Text>
+                <Box marginLeft="10px" lineHeight="3.4" >
+                   <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/timetracker" style={{textDecoration:"none"}}  >Time Tracker       </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/projectmanagement" style={{textDecoration:"none"}}  >Project Management </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/onlinetimesheet"  style={{textDecoration:"none"}}>Online Timesheet   </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link  to="/features/timecards" style={{textDecoration:"none"}}  >Timecard           </Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"><Link to="/features/attendancetracking"style={{textDecoration:"none"}}  >Attendance Tracking</Link>  </Text>
+                  <Text _hover={{color:"#ed565a", cursor:"pointer"}} color="#242954;"> Time Reporting </Text>
 
                   <ButtonComp refer="/signup" words="Your Work Email" s="210px" bg="white" bord="0.5px solid black" />
                   <ButtonComp refer="/login" bg="#ed565a" words="Start For Free" s="210px" clr="white" hov="#646cc7" />
   
                 </Box>
-              </DrawerBody>
+              </DrawerBody> 
     
     
               <DrawerFooter>
