@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
-import {RiArrowDropDownLine} from 'react-icons/ri'
+import {useDispatch, useSelector} from 'react-redux'
+import { LOGINFAILURE } from '../login/actiontype';
 const Navbar = () => {
   const [feature, setFeature] = useState(false);
   const [downArrow, setArrow] = useState(false);
-  
+
+  const dispatch = useDispatch()
+  const { isAuth } = useSelector((state) => state.login);
   let navigate = useNavigate();
 
  
@@ -14,7 +17,13 @@ const Navbar = () => {
     navigate('/');
   };
 
-
+  const handlelogin = () => {
+    if (isAuth === true) {
+      dispatch({ type: LOGINFAILURE });
+    } else {
+      navigate('/login');
+    }
+  };
 
     return (
     <div className='navbar__container lg:flex '>
@@ -62,7 +71,7 @@ const Navbar = () => {
   </div>
                 </div>  
               <button className='navbar__tryit '><Link to="/signup" >TRY IT FOR FREE </Link> </button>
-              <button className='navbar__tryit navbar__links' id='Login__button' ><Link to = "/login"> Login </Link></button>
+              <button className='navbar__tryit navbar__links' id='Login__button' onClick={handlelogin}> {isAuth?"Logout":"Login"}</button>
               </div>
         
  </div>
